@@ -1,0 +1,303 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fig",
+				"figheight"
+			],
+			[
+				"log",
+				"logline"
+			],
+			[
+				"roi",
+				"roiY"
+			],
+			[
+				"ro",
+				"roiY"
+			],
+			[
+				"inter",
+				"intervalTimeStamp"
+			],
+			[
+				"limi",
+				"limitBandwidth"
+			],
+			[
+				"this",
+				"thisFrame"
+			],
+			[
+				"cl",
+				"Close"
+			],
+			[
+				"stat",
+				"status"
+			],
+			[
+				"last",
+				"lastFrameTimeStamp"
+			],
+			[
+				"thisF",
+				"thisFrameTimeStamp"
+			],
+			[
+				"inte",
+				"interval"
+			],
+			[
+				"index",
+				"indexString"
+			],
+			[
+				"ski",
+				"skipIndex"
+			],
+			[
+				"sk",
+				"skipIndex"
+			],
+			[
+				"skip",
+				"skipCount"
+			],
+			[
+				"text",
+				"text"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "triggerTest.cpp",
+			"settings":
+			{
+				"buffer_size": 2058,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Makefile",
+			"settings":
+			{
+				"buffer_size": 313,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/C++/C++.sublime-build",
+	"command_palette":
+	{
+		"height": 360.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Volumes/SHARED/openFrameworks/apps/Research.ReprojectionScanning/c++/triggerTest/logInterval.cpp",
+		"/Users/elliot/dev/ximea/Examples/voltageTest/Makefile",
+		"/Users/elliot/dev/ximea/Examples/voltageTest/stdafx.h",
+		"/Users/elliot/dev/ximea/Examples/voltageTest/xiSample.cpp",
+		"/Volumes/SHARED/openFrameworks/apps/Research.ReprojectionScanning/python/Constants.py",
+		"/etc/rc.d/rc.local",
+		"/Users/elliot/.ipython/profile_notebook-config/ipython_notebook_config.py",
+		"/Volumes/SHARED/openFrameworks/apps/Research.ReprojectionScanning/c++/logInterval/.gitignore",
+		"/Users/elliot/.ipython/profile_notebook-config/ipython_config.py",
+		"/Users/elliot/dev/ximea/Examples/xiSample/xiSample.cpp",
+		"/Volumes/SHARED/openFrameworks/addons/ofxSane/readme.md",
+		"/Users/elliot/Movies/Downloads/BioShock_Infinite-FLT/fairlight.nfo",
+		"/Volumes/SHARED/openFrameworks/addons/ofxMachineVision/readme.md",
+		"/Volumes/SHARED/openFrameworks/addons/ofxMachineVision/.gitignore",
+		"/Volumes/SHARED/openFrameworks/addons/ofxGraycode/install.xml",
+		"/Volumes/SHARED/openFrameworks/addons/ofxMachineVision/Doxyfile",
+		"/Volumes/SHARED/openFrameworks/addons/ofxMachineVision/src/Doxyfile",
+		"/Applications/Adobe Illustrator CS6/Scripting.localized/My scripts/test.jsx",
+		"/Applications/Adobe Illustrator CS6/Scripting.localized/My scripts/test",
+		"/Users/elliot/.bash/gitprompt.sh",
+		"/Users/elliot/.bashrc",
+		"/Users/elliot/Dropbox/Elliot/FutureEverything/Chattr/chattr badge - test.ai",
+		"/Volumes/Shared/openFrameworks/.bashrc"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"figure",
+			"mainpage",
+			"main",
+			"dir",
+			"latex",
+			"notPhotoSet",
+			"PhotoURL",
+			"panelMargins",
+			"logged"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"panelReplace"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "triggerTest.cpp",
+					"settings":
+					{
+						"buffer_size": 2058,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								702,
+								702
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 264.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Makefile",
+					"settings":
+					{
+						"buffer_size": 313,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								78,
+								59
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

@@ -18,7 +18,7 @@ bool checkStatus(XI_RETURN status, string action) {
 		return false;
 	}
 }
-
+ 
 Nanoseconds GetTime() {
 	return AbsoluteToNanoseconds(UpTime());
 }
