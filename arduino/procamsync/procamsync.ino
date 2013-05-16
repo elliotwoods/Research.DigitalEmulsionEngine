@@ -48,12 +48,8 @@ void loop() {
   //Check if we need to set high
   unsigned long timeMicros = micros();
   if (micros() % interval > (phaseDelay + lastTimestamp) % interval) {
-    digitalWrite(cameraPin, HIGH);
-    digitalWrite(ledPin, HIGH);
-    delay(20);
-    digitalWrite(cameraPin, LOW);
-    digitalWrite(ledPin, LOW);
     
+    shootCamera();
     printStatus();
     /*
     char message[200];
@@ -70,6 +66,14 @@ void onProjectorRisingEdge() {
   unsigned long currentTimestamp = micros();
   interval = currentTimestamp - lastTimestamp;
   lastTimestamp = currentTimestamp;
+}
+
+void shootCamera() {
+    digitalWrite(cameraPin, HIGH);
+    digitalWrite(ledPin, HIGH);
+    delay(20);
+    digitalWrite(cameraPin, LOW);
+    digitalWrite(ledPin, LOW);
 }
 
 void printStatus() {
