@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.3.dtd" >
-   <PATCH nodename="C:\dev\openFrameworks\apps\Research.ReprojectionScanning\vvvv\0. Balance Brightness\main.v4p" systemname="main" filename="C:\dev\openFrameworks\apps\Research.ReprojectionScanning\vvvv\0. Balance Brightness\main.v4p">
-   <BOUNDS type="Window" left="9900" top="6000" width="11055" height="9240">
+   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\0. Balance brightness\main.v4p" systemname="main" filename="C:\dev\openFrameworks\apps\Research.ReprojectionScanning\vvvv\0. Balance Brightness\main.v4p">
+   <BOUNDS type="Window" left="10905" top="4425" width="11055" height="9240">
    </BOUNDS>
    <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="0">
    <BOUNDS type="Node" left="1320" top="4245" width="100" height="100">
@@ -23,9 +23,9 @@
    </PIN>
    <PIN pinname="Green" visible="1">
    </PIN>
-   <PIN pinname="Width" slicecount="1" values="7">
+   <PIN pinname="Width" slicecount="1" values="31">
    </PIN>
-   <PIN pinname="Height" slicecount="1" values="7">
+   <PIN pinname="Height" slicecount="1" values="31">
    </PIN>
    </NODE>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="5">
@@ -37,7 +37,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="8">
+   <PIN pinname="Y Input Value" slicecount="1" values="166">
    </PIN>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
@@ -263,7 +263,7 @@
    </PIN>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="15">
+   <PIN pinname="Y Input Value" slicecount="1" values="255">
    </PIN>
    <PIN pinname="Input String" visible="0">
    </PIN>
