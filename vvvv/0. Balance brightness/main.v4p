@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.3.dtd" >
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.6.dtd" >
    <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\0. Balance brightness\main.v4p" systemname="main" filename="C:\dev\openFrameworks\apps\Research.ReprojectionScanning\vvvv\0. Balance Brightness\main.v4p">
-   <BOUNDS type="Window" left="10905" top="4425" width="11055" height="9240">
+   <BOUNDS type="Window" left="16350" top="5160" width="11055" height="9240">
    </BOUNDS>
    <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="0">
    <BOUNDS type="Node" left="1320" top="4245" width="100" height="100">
@@ -25,7 +25,7 @@
    </PIN>
    <PIN pinname="Width" slicecount="1" values="31">
    </PIN>
-   <PIN pinname="Height" slicecount="1" values="31">
+   <PIN pinname="Height" slicecount="1" visible="1" values="31">
    </PIN>
    </NODE>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="5">
@@ -37,7 +37,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="166">
+   <PIN pinname="Y Input Value" slicecount="1" values="46">
    </PIN>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
@@ -195,7 +195,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="7680" top="3330" width="2220" height="240">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" values="|equivalent readings.txt|">
+   <PIN pinname="Input String" slicecount="1" values="hdmi.txt">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="file.txt">
    </PIN>
@@ -263,7 +263,7 @@
    </PIN>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="255">
+   <PIN pinname="Y Input Value" slicecount="1" values="75">
    </PIN>
    <PIN pinname="Input String" visible="0">
    </PIN>
@@ -289,5 +289,25 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="16" srcpinname="Output" dstnodeid="22" dstpinname="Input 1">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="23" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="1635" top="1605" width="420" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1635" top="1605" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="15">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="3" dstpinname="Width">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="3" dstpinname="Height">
    </LINK>
    </PATCH>
