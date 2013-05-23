@@ -1,16 +1,8 @@
 int ledPin = 13;
 int projectorPin = 2;
-int cameraPin = 5;
-int potentiometerPin = 0;
 
 volatile unsigned long lastTimestamp = 0;
 volatile long interval = 0;
-
-volatile float potentiometerValue = 0.0f;
-volatile unsigned long phaseDelay = 0;
-
-volatile unsigned long nextTrigger = 0;
-volatile bool toTrigger = false;
 
 volatile float fps = 0.0f;
 
@@ -22,50 +14,28 @@ void setup() {
   attachInterrupt(0, onProjectorRisingEdge, FALLING);
   
   pinMode(ledPin, OUTPUT);
-  pinMode(cameraPin, OUTPUT);
 }
 
 void loop() {  
-  fps = (float) 1e6  / (float) interval; 
-  
-  //--
-  //Update delay
-  //
-  int rawPotentiometerValue = analogRead(potentiometerPin);
-  potentiometerValue = (float) rawPotentiometerValue / (float) 1023;
-  phaseDelay = potentiometerValue * (float) interval;
-  //
-  //--
-  
-  //--
-  //Check timing
-  //
-  unsigned long currentTime = micros();
-  if (currentTime >= nextTrigger && toTrigger) {
-    shootCamera();
-    toTrigger = false;
-  }
-  //
-  //--
+  delay(10);
 }
 
 void onProjectorRisingEdge() {    
   unsigned long currentTimestamp = micros();
   interval = currentTimestamp - lastTimestamp;
   lastTimestamp = currentTimestamp;
-   
-  nextTrigger = currentTimestamp + phaseDelay;
-  toTrigger = true;
   
-  //Serial.println("trigger");
+  fps = (float) 1e6  / (float) interval; 
+  
+  Serial.println(fps);
 }
 
 void shootCamera() {
     digitalWrite(cameraPin, HIGH);
-    //digitalWrite(ledPin, HIGH);
-    delayMicroseconds(10);
+    digitalWrite(ledPin, HIGH);
+    delay(1);
     digitalWrite(cameraPin, LOW);
-    //digitalWrite(ledPin, LOW);
+    digitalWrite(ledPin, LOW);
 }
 
 void printStatus() {
