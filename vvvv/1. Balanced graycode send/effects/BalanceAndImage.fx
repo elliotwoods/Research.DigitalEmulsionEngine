@@ -36,6 +36,7 @@ sampler SampImage = sampler_state    //sampler for doing the texture-lookup
 
 float4x4 tTex: TEXTUREMATRIX <string uiname="Texture Transform";>;
 float SignalAmplitude = 0.3f;
+float ImageAmplitude = 1.0f;
 float Alpha = 1.0f;
 
 //the data structure: vertexshader to pixelshader
@@ -83,9 +84,9 @@ float4 PS(vs2ps In): COLOR
 	fA *= 1.0f - signal;
 	
 	//apply image in remaining range
-	fA += (1.0f - fA) * tex2D(SampImage, In.TexCd).r;
-	
-	float4 col = float4(fA, fA, A, 1.0f);
+	fA += (1.0f - fA) * tex2D(SampImage, In.TexCd).r * ImageAmplitude;
+
+	float4 col = float4(fA,0,A, 1.0f);
 	
     col.a *= Alpha;
     return col;
