@@ -1,0 +1,25 @@
+Texture2D Input: PREVIOUS;
+Texture2D Mean <string uiname="Threshold";>;
+
+SamplerState s0 <bool visible=false;string uiname="Sampler";> {Filter=MIN_MAG_MIP_POINT; AddressU=CLAMP;AddressV=CLAMP;};
+float2 R:TARGETSIZE;
+float thresholdOffset = 0.01f;
+
+cbuffer controls:register(b0){
+	float Fader <float uimin=0.0;float uimax=1.0;> =0.5;
+	float Smooth <float uimin=0.0;float uimax=1.0;> =0.25;
+};
+
+#define bld(op,c0,c1) float4(lerp((c0*c0.a+c1*c1.a*(1-c0.a))/saturate(c0.a+c1.a*(1-c0.a)),(op),c0.a*c1.a).rgb,saturate(c0.a+c1.a*(1-c0.a)))
+
+float4 pThreshold(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+	float value=Input.Sample(s0,x).r;
+	float threshold=Mean.Sample(s0,x).r;
+	
+	float4 result = (float4) 1;
+	result.rgb = value > threshold + thresholdOffset;
+    return result;
+}
+
+
+technique10 Mix{pass P1{SetPixelShader(CompileShader(ps_4_0,pThreshold()));}}

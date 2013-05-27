@@ -44,12 +44,12 @@
    </NODE>
    <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="3" dstpinname="Texture">
    </LINK>
-   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="Hidden" id="4">
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="4">
    <BOUNDS type="Node" left="1260" top="4005" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="1260" top="4005" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="20730" top="8460" width="6240" height="5085">
+   <BOUNDS type="Window" left="20115" top="7005" width="6240" height="5085">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>

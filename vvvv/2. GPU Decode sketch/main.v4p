@@ -168,14 +168,16 @@
    </NODE>
    <LINK srcnodeid="35" srcpinname="Output" dstnodeid="34" dstpinname="RandomSeed">
    </LINK>
-   <NODE systemname="mean" filename="subpatches\mean.v4p" componentmode="Hidden" id="37" nodename="subpatches\mean.v4p">
-   <BOUNDS type="Node" left="1305" top="9285" width="100" height="100">
+   <NODE systemname="mean" filename="subpatches\mean.v4p" componentmode="InAWindow" id="37" nodename="subpatches\mean.v4p">
+   <BOUNDS type="Node" left="1290" top="4800" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="1305" top="9285" width="4800" height="3600">
+   <BOUNDS type="Box" left="1290" top="4800" width="4800" height="3600">
    </BOUNDS>
    <BOUNDS type="Window" left="12135" top="8190" width="8205" height="7350">
    </BOUNDS>
    <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="14" srcpinname="Texture Out" dstnodeid="37" dstpinname="Input">
@@ -198,4 +200,46 @@
    </NODE>
    <LINK srcnodeid="38" srcpinname="frames per second" dstnodeid="39" dstpinname="Y Input Value">
    </LINK>
+   <NODE systemname="Threshold (DX11.TextureFX)" filename="texture11\Threshold.tfx" nodename="Threshold (DX11.TextureFX)" componentmode="Hidden" id="40">
+   <BOUNDS type="Node" left="2445" top="6180" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   <PIN pinname="Texture In 2" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Threshold" visible="1">
+   </PIN>
+   <PIN pinname="thresholdOffset" slicecount="1" values="0.08">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="26" srcpinname="Texture Out" dstnodeid="40" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Output" dstnodeid="40" dstpinname="Texture In 2" linkstyle="Bezier">
+   <LINKPOINT x="1350" y="5610">
+   </LINKPOINT>
+   <LINKPOINT x="2925" y="5610">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="41">
+   <BOUNDS type="Node" left="2445" top="6690" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2445" top="6690" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="21585" top="11430" width="6240" height="5085">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="40" srcpinname="Texture Out" dstnodeid="41" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Output" dstnodeid="40" dstpinname="Threshold">
+   </LINK>
+   <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
+   <BOUNDS type="Node" left="6570" top="6450" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Maximum forground fps" slicecount="1" values="1000">
+   </PIN>
+   </NODE>
    </PATCH>
