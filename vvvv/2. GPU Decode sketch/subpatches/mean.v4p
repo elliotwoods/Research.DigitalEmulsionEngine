@@ -1,4 +1,4 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta29.2.dtd" >
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.6.dtd" >
    <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\2. GPU Decode sketch\subpatches\mean.v4p" systemname="mean" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\2. GPU Decode sketch\subpatches\mean.v4p">
    <BOUNDS type="Window" left="12135" top="8190" width="8205" height="7350">
    </BOUNDS>
@@ -45,9 +45,9 @@
    <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="3" dstpinname="Texture">
    </LINK>
    <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="4">
-   <BOUNDS type="Node" left="1260" top="4005" width="100" height="100">
+   <BOUNDS type="Node" left="1080" top="4005" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="1260" top="4005" width="6000" height="4500">
+   <BOUNDS type="Box" left="1080" top="4005" width="6000" height="4500">
    </BOUNDS>
    <BOUNDS type="Window" left="20115" top="7005" width="6240" height="5085">
    </BOUNDS>
@@ -131,7 +131,7 @@
    <LINK srcnodeid="10" srcpinname="Output" dstnodeid="8" dstpinname="Lightness">
    </LINK>
    <NODE systemname="TimeStamp (DX11.Query)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="TimeStamp (DX11.Query)" componentmode="Hidden" id="11">
-   <BOUNDS type="Node" left="3150" top="4515" width="100" height="100">
+   <BOUNDS type="Node" left="2820" top="4515" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Query Source" visible="1">
    </PIN>
@@ -139,9 +139,9 @@
    <LINK srcnodeid="4" srcpinname="Query" dstnodeid="11" dstpinname="Query Source">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="12" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Node" left="3150" top="5160" width="0" height="0">
+   <BOUNDS type="Node" left="2820" top="5160" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="3150" top="5160" width="795" height="240">
+   <BOUNDS type="Box" left="2820" top="5160" width="795" height="240">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -151,9 +151,9 @@
    <LINK srcnodeid="11" srcpinname="Time" dstnodeid="12" dstpinname="Y Input Value">
    </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="13" systemname="IOBox (Node)">
-   <BOUNDS type="Node" left="2625" top="5715" width="0" height="0">
+   <BOUNDS type="Node" left="2325" top="5715" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="2625" top="5715" width="795" height="240">
+   <BOUNDS type="Box" left="2325" top="5715" width="795" height="240">
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="Output">
    </PIN>

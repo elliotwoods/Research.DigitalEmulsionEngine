@@ -1,0 +1,32 @@
+Texture2D<uint2> tex0: PREVIOUS;
+
+float2 R:TARGETSIZE;
+
+cbuffer controls:register(b0){
+	int PayloadWidth <float uimin=0.0;float uistep=1;> = 1024;
+	int PayloadHeight <float uimin=0.0;float uistep=1;> = 768;
+};
+
+SamplerState s0 <bool visible=false;string uiname="Sampler";> {
+	Filter=MIN_MAG_MIP_LINEAR;
+	AddressU=CLAMP;
+	AddressV=CLAMP;
+};
+
+float4 pNormalise(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0) : SV_Target{
+	uint2 data = tex0[x * R];
+	float4 c = (float4) 1.0f;
+	c.r = (float) data.x / PayloadWidth;
+	c.g = (float) data.y / PayloadHeight;
+	return c;
+}
+
+technique10 Normalise{
+	pass P0 <string format="R16G16_Float"; >
+	{
+		SetPixelShader(CompileShader(ps_4_0,pNormalise()));
+	}
+}
+
+
+
