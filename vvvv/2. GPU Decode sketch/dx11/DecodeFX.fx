@@ -1,5 +1,5 @@
 Texture2D Input;
-Texture2D Mean;
+Texture2D<float> Mean;
 Texture2D<uint2> Previous <string uiname="Previous";>;
 
 SamplerState g_samLinear : IMMUTABLE
@@ -54,14 +54,14 @@ uint2 PS(vs2ps In): SV_Target
 	float2 uv = R * In.TexCd.xy;
     
 	float input = Input[uv].r;
-	float mean = Mean[uv].r;
+	float mean = Mean[uv];
 	uint2 value = Previous[uv];
 	
 	if (Clear) {
 		value = (uint2) 0;
 	}
 	
-	bool high = input > mean;
+	bool high = input > mean + ThresholdOffset;
 	
 	if (FrameIndex < FrameCountX) {
 		int mask = 1 << FrameIndex;
