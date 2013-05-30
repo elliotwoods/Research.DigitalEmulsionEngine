@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.6.dtd" >
-   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\3. Media tree\Modules\RootBranch (Median Tree).v4p" systemname="RootBranch (Median Tree)" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\3. Media tree\Modules\RootBranch (Median Tree).v4p">
-   <BOUNDS type="Window" left="11850" top="4995" width="4725" height="10245">
+   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\3. Median tree\modules\RootBranch (Median Tree).v4p" systemname="RootBranch (Median Tree)" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\3. Media tree\Modules\RootBranch (Median Tree).v4p">
+   <BOUNDS type="Window" left="11850" top="4995" width="5865" height="11055">
    </BOUNDS>
    <NODE systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow" id="0">
    <BOUNDS type="Node" left="450" top="8325" width="100" height="100">
@@ -18,6 +18,8 @@
    <PIN pinname="View" visible="1">
    </PIN>
    <PIN pinname="Background Color" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Query" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="Quad (DX11.Geometry)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Quad (DX11.Geometry)" componentmode="Hidden" id="1">
@@ -261,5 +263,31 @@
    </LINKPOINT>
    <LINKPOINT x="3210" y="7095">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="TimeStamp (DX11.Query)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="TimeStamp (DX11.Query)" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="4200" top="8610" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Query Source" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Query" dstnodeid="28" dstpinname="Query Source" linkstyle="VHV" hiddenwhenlocked="1">
+   <LINKPOINT x="2850" y="8588">
+   </LINKPOINT>
+   <LINKPOINT x="4200" y="8588">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="29" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4185" top="8970" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4185" top="8970" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Time">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="28" srcpinname="Time" dstnodeid="29" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

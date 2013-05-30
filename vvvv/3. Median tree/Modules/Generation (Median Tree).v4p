@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.6.dtd" >
-   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\3. Media tree\Modules\Generation (Median Tree).v4p" systemname="Generation (Median Tree)" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\3. Media tree\Modules\Generation (Median Tree).v4p">
+   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\3. Median tree\modules\Generation (Median Tree).v4p" systemname="Generation (Median Tree)" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\3. Media tree\Modules\Generation (Median Tree).v4p">
    <BOUNDS type="Window" left="8310" top="6135" width="12525" height="9300">
    </BOUNDS>
    <NODE systemname="Pow2Sqrt (Value)" filename="Pow2Sqrt (Value).v4p" nodename="Pow2Sqrt (Value)" componentmode="Hidden" id="0">
@@ -58,6 +58,8 @@
    <PIN pinname="Texture SizeXY" visible="1">
    </PIN>
    <PIN pinname="Clear" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Query" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="Quad (DX11.Geometry)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Quad (DX11.Geometry)" componentmode="Hidden" id="5">
@@ -130,6 +132,8 @@
    <PIN pinname="Rows" slicecount="1" values="2">
    </PIN>
    <PIN pinname="Maximum" slicecount="1" values="10000">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="Info (DX11.Texture 2d)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Info (DX11.Texture 2d)" componentmode="Hidden" id="11">
@@ -239,9 +243,9 @@
    <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="6" dstpinname="Index">
    </LINK>
    <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="6" dstpinname="ResolutionXY" linkstyle="VHV">
-   <LINKPOINT x="1590" y="5170">
+   <LINKPOINT x="1590" y="5220">
    </LINKPOINT>
-   <LINKPOINT x="7650" y="5270">
+   <LINKPOINT x="9120" y="5220">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="15" srcpinname="Y Output Value" dstnodeid="6" dstpinname="GridResolutionXY">
@@ -413,5 +417,31 @@
    <LINK srcnodeid="26" srcpinname="Output" dstnodeid="0" dstpinname="Input Real">
    </LINK>
    <LINK srcnodeid="26" srcpinname="Output" dstnodeid="20" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="TimeStamp (DX11.Query)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="TimeStamp (DX11.Query)" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="6195" top="7860" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Query Source" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Query" dstnodeid="28" dstpinname="Query Source">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="29" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="9840" top="8535" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9840" top="8535" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Time">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="28" srcpinname="Time" dstnodeid="29" dstpinname="Y Input Value" linkstyle="VHV">
+   <LINKPOINT x="6255" y="8318">
+   </LINKPOINT>
+   <LINKPOINT x="9840" y="8318">
+   </LINKPOINT>
    </LINK>
    </PATCH>

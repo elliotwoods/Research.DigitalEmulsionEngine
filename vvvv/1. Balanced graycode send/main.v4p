@@ -53,7 +53,7 @@
    </PIN>
    <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="NONE">
    </PIN>
-   <PIN pinname="Fullscreen Refresh Rate" slicecount="1" values="60">
+   <PIN pinname="Fullscreen Refresh Rate" slicecount="1" values="120">
    </PIN>
    <PIN pinname="Actual Backbuffer Width" visible="1">
    </PIN>
@@ -305,7 +305,7 @@
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="2">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="2" values="0.81179487,2.21501832">
+   <PIN pinname="Y Input Value" slicecount="2" values="0.84,2.21501832">
    </PIN>
    <PIN pinname="Vector Size" slicecount="1" values="2">
    </PIN>
@@ -383,7 +383,7 @@
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" pintype="Configuration" values="SignalAmplitude">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" pintype="Input" visible="1" values="0.62">
+   <PIN pinname="Y Input Value" slicecount="1" pintype="Input" visible="1" values="0.35">
    </PIN>
    <PIN pinname="Units" slicecount="1" pintype="Configuration" values="||">
    </PIN>
@@ -806,8 +806,6 @@
    <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="124" srcpinname="Y Output Value" dstnodeid="79" dstpinname="Up">
-   </LINK>
    <LINK srcnodeid="29" srcpinname="Output" dstnodeid="14" dstpinname="Y Input Value">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="125" systemname="IOBox (Value Advanced)">
@@ -831,5 +829,7 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="125" srcpinname="Y Output Value" dstnodeid="79" dstpinname="Reset">
+   </LINK>
+   <LINK srcnodeid="81" srcpinname="Y Output Value" dstnodeid="79" dstpinname="Up">
    </LINK>
    </PATCH>

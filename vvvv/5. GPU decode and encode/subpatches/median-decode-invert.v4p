@@ -1,8 +1,8 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.6.dtd" >
-   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\2. GPU Decode sketch\main.v4p" systemname="main" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\2. GPU Decode sketch\main.v4p">
+   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\5. GPU decode and encode\subpatches\median-decode-invert.v4p" systemname="median-decode-invert" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\5. GPU decode and encode\subpatches\median-decode-invert.v4p">
    <BOUNDS type="Window" left="6225" top="1800" width="18420" height="13710">
    </BOUNDS>
-   <NODE systemname="input" filename="..\5. GPU decode and encode\subpatches\input.v4p" nodename="subpatches\input.v4p" componentmode="Hidden" id="14">
+   <NODE systemname="input" filename="input.v4p" nodename="subpatches\input.v4p" componentmode="Hidden" id="14">
    <BOUNDS type="Node" left="1269" top="1011" width="0" height="0">
    </BOUNDS>
    <BOUNDS type="Box" left="0" top="0" width="7780" height="8665">
@@ -170,7 +170,7 @@
    <PIN pinname="Texture In" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="NormalizeDecoding (DX11.TextureFX)" filename="..\5. GPU decode and encode\texture11\NormalizeDecoding.tfx" nodename="NormalizeDecoding (DX11.TextureFX)" componentmode="Hidden" id="79">
+   <NODE systemname="NormalizeDecoding (DX11.TextureFX)" filename="..\texture11\NormalizeDecoding.tfx" nodename="NormalizeDecoding (DX11.TextureFX)" componentmode="Hidden" id="79">
    <BOUNDS type="Node" left="9960" top="12255" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
@@ -260,7 +260,25 @@
    <PIN pinname="Y Input Value" slicecount="1" values="0.123967997729778">
    </PIN>
    </NODE>
-   <NODE systemname="median-tree" filename="..\5. GPU decode and encode\subpatches\median-tree.v4p" componentmode="Hidden" id="135" nodename="subpatches\median-tree.v4p">
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="133" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="5775" top="3135" width="6360" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5775" top="3135" width="4845" height="1875">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|graycode decoding and inversion on GPU at 120Hz|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="SWIsop3">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="24">
+   </PIN>
+   </NODE>
+   <NODE systemname="median-tree" filename="median-tree.v4p" componentmode="Hidden" id="135" nodename="subpatches\median-tree.v4p">
    <BOUNDS type="Node" left="1260" top="6555" width="3735" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="1260" top="6555" width="4800" height="3600">
@@ -288,7 +306,7 @@
    </NODE>
    <LINK srcnodeid="135" srcpinname="Output" dstnodeid="137" dstpinname="Input Node">
    </LINK>
-   <NODE systemname="graycode-to-binary" filename="..\5. GPU decode and encode\subpatches\graycode-to-binary.v4p" nodename="subpatches\graycode-to-binary.v4p" componentmode="InAWindow" id="139">
+   <NODE systemname="graycode-to-binary" filename="graycode-to-binary.v4p" nodename="subpatches\graycode-to-binary.v4p" componentmode="InAWindow" id="139">
    <BOUNDS type="Node" left="6195" top="10365" width="0" height="0">
    </BOUNDS>
    <BOUNDS type="Box" left="4495" top="8035" width="3400" height="4660">
@@ -306,7 +324,7 @@
    <LINKPOINT x="9960" y="11430">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="decode" filename="..\5. GPU decode and encode\subpatches\decode.v4p" nodename="subpatches\decode.v4p" componentmode="InAWindow" id="140">
+   <NODE systemname="decode" filename="decode.v4p" nodename="subpatches\decode.v4p" componentmode="InAWindow" id="140">
    <BOUNDS type="Node" left="6190" top="9235" width="4350" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="3110" top="6800" width="6160" height="4870">
@@ -334,7 +352,7 @@
    </LINK>
    <LINK srcnodeid="140" srcpinname="Time" dstnodeid="123" dstpinname="Y Input Value">
    </LINK>
-   <NODE systemname="invert-space" filename="..\5. GPU decode and encode\subpatches\invert-space.v4p" nodename="subpatches\invert-space.v4p" componentmode="Hidden" id="141">
+   <NODE systemname="invert-space" filename="invert-space.v4p" nodename="subpatches\invert-space.v4p" componentmode="Hidden" id="141">
    <BOUNDS type="Node" left="3144" top="11735" width="3120" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="507" top="7453" width="5275" height="8565">
@@ -388,7 +406,7 @@
    </NODE>
    <LINK srcnodeid="142" srcpinname="Y Output Value" dstnodeid="141" dstpinname="Payload size">
    </LINK>
-   <NODE systemname="ApplyNoise" filename="..\3. Median tree\Subpatches\ApplyNoise.v4p" nodename="..\3. Median tree\Subpatches\ApplyNoise.v4p" componentmode="Hidden" id="143">
+   <NODE systemname="ApplyNoise" filename="..\..\3. Median tree\Subpatches\ApplyNoise.v4p" nodename="..\3. Median tree\Subpatches\ApplyNoise.v4p" componentmode="Hidden" id="143">
    <BOUNDS type="Node" left="1275" top="4920" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
@@ -460,7 +478,7 @@
    <LINKPOINT x="3660" y="2543">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="NormalizeDecoding (DX11.TextureFX)" filename="..\5. GPU decode and encode\texture11\NormalizeDecoding.tfx" nodename="NormalizeDecoding (DX11.TextureFX)" componentmode="Hidden" id="146">
+   <NODE systemname="NormalizeDecoding (DX11.TextureFX)" filename="..\texture11\NormalizeDecoding.tfx" nodename="NormalizeDecoding (DX11.TextureFX)" componentmode="Hidden" id="146">
    <BOUNDS type="Node" left="3150" top="12255" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
