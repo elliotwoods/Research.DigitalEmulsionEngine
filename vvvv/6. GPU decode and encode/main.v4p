@@ -1,0 +1,45 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.6.dtd" >
+   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\5. GPU decode and encode\main.v4p" systemname="main" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\5. GPU decode and encode\main.v4p">
+   <BOUNDS type="Window" left="9900" top="5100" width="13080" height="8955">
+   </BOUNDS>
+   <NODE systemname="median-decode-invert" filename="subpatches\median-decode-invert.v4p" nodename="subpatches\median-decode-invert.v4p" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="2055" top="3345" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="input" filename="subpatches\input.v4p" nodename="subpatches\input.v4p" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="2066" top="2006" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="-1256" top="-676" width="6645" height="5365">
+   </BOUNDS>
+   <BOUNDS type="Window" left="12270" top="7410" width="11580" height="8895">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Texture Out" dstnodeid="1" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="7" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="2070" top="990" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2070" top="990" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Open">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Y Output Value" dstnodeid="6" dstpinname="Open">
+   </LINK>
+   </PATCH>
