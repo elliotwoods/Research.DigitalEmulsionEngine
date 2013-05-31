@@ -3,10 +3,9 @@ Texture2D<float2> CinP: PREVIOUS;
 float2 R:TARGETSIZE;
 
 cbuffer controls:register(b0){
-	float4x4 InverseCameraMatrix;
+	float4x4 InverseCameraProjectionMatrix;
 	float4 CameraDistortion;
-	float4x4 InverseProjectionMatrix;
-	float4x4 InverseProjectorExtrinsics;
+	float4x4 InverseProjectorViewProjectionMatrix;
 	float MaxLength = 0.01f;
 };
 
@@ -90,15 +89,15 @@ Ray castCoordinate(float2 x, float4 distortion, float4x4 inversePerspective)
 	return ray;
 }
 
-Ray castCoordinate(float2 x, float4x4 inverseExtrinsics, float4x4 inversePerspective)
+Ray castCoordinate(float2 x, float4x4 inverseViewProjection)
 {
 	float4 s = float4(0, 0, 0, 1);
 	float4 t = float4(x.x, x.y, 1.0f, 1.0f);
 	
-	s = mul(s, inverseExtrinsics);
+	s = mul(s, inverseViewProjection);
 	s /= s.w;
 	
-	t = mul(t, mul(inversePerspective, inverseExtrinsics));
+	t = mul(t, inverseViewProjection);
 	t /= t.w;
 	
 	Ray ray;
@@ -128,10 +127,10 @@ float2 getCoord(float2 textureCoord)
 float3 pTriangulate(float4 PosWVP:SV_POSITION,float2 texcoord:TEXCOORD0):SV_Target
 {
 	float2 projectorCoord = getCoord(texcoord);
-	float2 cameraCoord = CinP[getPixelCoord(texcoord)];
+	float2 cameraCoord = getCoord(CinP[getPixelCoord(texcoord)]);
 	
-	Ray cameraRay = castCoordinate(cameraCoord, CameraDistortion, InverseCameraMatrix);
-	Ray projectorRay = castCoordinate(projectorCoord, InverseProjectorExtrinsics, InverseProjectionMatrix);
+	Ray cameraRay = castCoordinate(cameraCoord, CameraDistortion, InverseCameraProjectionMatrix);
+	Ray projectorRay = castCoordinate(projectorCoord, InverseProjectorViewProjectionMatrix);
 	
 	Ray intersect = cameraRay.intersect(projectorRay);
 	

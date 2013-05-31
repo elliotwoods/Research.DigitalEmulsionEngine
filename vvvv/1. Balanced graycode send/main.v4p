@@ -34,36 +34,6 @@
    <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Width">
    </PIN>
    </NODE>
-   <NODE componentmode="FullScreen" id="12" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
-   <BOUNDS height="100" left="375" top="9045" type="Node" width="100">
-   </BOUNDS>
-   <BOUNDS height="2160" left="375" top="9045" type="Box" width="2490">
-   </BOUNDS>
-   <BOUNDS height="7110" left="35850" top="2220" type="Window" width="9780">
-   </BOUNDS>
-   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="NONE">
-   </PIN>
-   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
-   </PIN>
-   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="NONE">
-   </PIN>
-   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="NONE">
-   </PIN>
-   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="NONE">
-   </PIN>
-   <PIN pinname="Fullscreen Refresh Rate" slicecount="1" values="120">
-   </PIN>
-   <PIN pinname="Actual Backbuffer Width" visible="1">
-   </PIN>
-   <PIN pinname="Actual Backbuffer Height" visible="1">
-   </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Backbuffer Height" slicecount="1" values="0">
-   </PIN>
-   </NODE>
    <NODE componentmode="InABox" id="13" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="0" left="7050" top="1680" type="Node" width="0">
    </BOUNDS>
@@ -305,7 +275,7 @@
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="2">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="2" values="0.84,2.21501832">
+   <PIN pinname="Y Input Value" slicecount="2" values="0.826,2.21501832">
    </PIN>
    <PIN pinname="Vector Size" slicecount="1" values="2">
    </PIN>
@@ -370,8 +340,6 @@
    </NODE>
    <LINK srcnodeid="85" srcpinname="Y Output Value" dstnodeid="96" dstpinname="Balance Coefficients XY">
    </LINK>
-   <LINK srcnodeid="96" srcpinname="Layer" dstnodeid="12" dstpinname="Layers">
-   </LINK>
    <LINK srcnodeid="92" srcpinname="Mesh" dstnodeid="96" dstpinname="Mesh">
    </LINK>
    <LINK srcnodeid="91" srcpinname="Transform Out" dstnodeid="96" dstpinname="Transform">
@@ -383,7 +351,7 @@
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" pintype="Configuration" values="SignalAmplitude">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" pintype="Input" visible="1" values="0.35">
+   <PIN pinname="Y Input Value" slicecount="1" pintype="Input" visible="1" values="0.3">
    </PIN>
    <PIN pinname="Units" slicecount="1" pintype="Configuration" values="||">
    </PIN>
@@ -489,9 +457,9 @@
    </PIN>
    <PIN pinname="Actual Backbuffer Height" visible="1">
    </PIN>
-   <PIN pinname="Backbuffer Width" visible="1">
+   <PIN pinname="Backbuffer Width" visible="1" slicecount="1" values="256">
    </PIN>
-   <PIN pinname="Backbuffer Height" visible="1">
+   <PIN pinname="Backbuffer Height" visible="1" slicecount="1" values="256">
    </PIN>
    </NODE>
    <NODE systemname="Constant (EX9.Effect)" filename="%VVVV%\lib\nodes\effects\Constant.fx" nodename="Constant (EX9.Effect)" componentmode="Hidden" id="103">
@@ -670,18 +638,6 @@
    </LINK>
    <LINK srcnodeid="102" srcpinname="Actual Backbuffer Height" dstnodeid="114" dstpinname="Aspect Height">
    </LINK>
-   <LINK srcnodeid="12" srcpinname="Actual Backbuffer Width" dstnodeid="102" dstpinname="Backbuffer Width" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="1515" y="7245">
-   </LINKPOINT>
-   <LINKPOINT x="9480" y="7245">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="12" srcpinname="Actual Backbuffer Height" dstnodeid="102" dstpinname="Backbuffer Height" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="1695" y="7245">
-   </LINKPOINT>
-   <LINKPOINT x="9750" y="7245">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="115" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="12660" top="675" width="480" height="480">
    </BOUNDS>
@@ -831,5 +787,49 @@
    <LINK srcnodeid="125" srcpinname="Y Output Value" dstnodeid="79" dstpinname="Reset">
    </LINK>
    <LINK srcnodeid="81" srcpinname="Y Output Value" dstnodeid="79" dstpinname="Up">
+   </LINK>
+   <NODE id="12" componentmode="FullScreen" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <BOUNDS type="Node" height="100" left="375" top="9045" width="100">
+   </BOUNDS>
+   <BOUNDS type="Box" height="2160" left="375" top="9045" width="2490">
+   </BOUNDS>
+   <BOUNDS type="Window" height="7110" left="35850" top="2220" width="9780">
+   </BOUNDS>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Refresh Rate" slicecount="1" values="60">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Backbuffer Height" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Actual Backbuffer Height" dstnodeid="102" dstpinname="Backbuffer Height" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="1695" y="7245">
+   </LINKPOINT>
+   <LINKPOINT x="9750" y="7245">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Actual Backbuffer Width" dstnodeid="102" dstpinname="Backbuffer Width" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="1515" y="7245">
+   </LINKPOINT>
+   <LINKPOINT x="9480" y="7245">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="96" srcpinname="Layer" dstnodeid="12" dstpinname="Layers">
    </LINK>
    </PATCH>

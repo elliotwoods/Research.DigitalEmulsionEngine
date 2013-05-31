@@ -481,7 +481,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="507" top="7453" width="5275" height="8565">
    </BOUNDS>
-   <BOUNDS type="Window" left="11535" top="7785" width="6165" height="9045">
+   <BOUNDS type="Window" left="3405" top="8115" width="6165" height="9045">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -519,5 +519,17 @@
    </LINKPOINT>
    <LINKPOINT x="2280" y="12615">
    </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="150" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4935" top="7470" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4935" top="7470" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="135" srcpinname="Time" dstnodeid="150" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
