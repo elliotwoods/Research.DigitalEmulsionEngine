@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.6.dtd" >
-   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\Common\Frame Index Decode.v4p" systemname="Frame Index Decode" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\Common\Frame Index Decode.v4p">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.1.dtd" >
+   <PATCH nodename="C:\openFrameworks\Research.ReprojectionScanning\vvvv\Common\Frame Index Decode.v4p" systemname="Frame Index Decode" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\Common\Frame Index Decode.v4p">
    <BOUNDS type="Window" left="9345" top="1095" width="16695" height="16050">
    </BOUNDS>
    <NODE systemname="Homography (Transform 2d)" nodename="Homography (Transform 2d)" componentmode="Hidden" id="0">
@@ -25,9 +25,9 @@
    </PIN>
    <PIN pinname="Show Value" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="4" values="-0.863247863247863,-0.871902813844264,-0.986666666666667,-0.973333333333333">
+   <PIN pinname="Y Input Value" slicecount="4" values="0.95008547008547,0.968097186155736,0.76,0.773333333333334">
    </PIN>
-   <PIN pinname="X Input Value" pintype="Input" slicecount="4" visible="0" values="0.802524312021518,0.981419408235051,0.977777777777778,0.783943720256569">
+   <PIN pinname="X Input Value" pintype="Input" slicecount="4" visible="0" values="0.82474653424374,0.966604593420236,0.955555555555556,0.813573349886199">
    </PIN>
    <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
    </PIN>
