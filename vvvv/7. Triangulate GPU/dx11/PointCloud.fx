@@ -3,7 +3,7 @@
 //@tags: color
 //@credits: 
 
-Texture2D<float3> WorldXYZ <string uiname="World";>;
+Texture2D<float4> WorldXYZ <string uiname="World";>;
 Texture2D Color <string uiname="Texture";>;
 
 SamplerState g_samLinear : IMMUTABLE
@@ -41,6 +41,7 @@ struct vs2ps
 {
     float4 PosWVP: SV_POSITION;
     float4 TexCd: TEXCOORD0;
+	bool Discard : TEXCOORD1;
 };
 
 vs2ps VS(VS_IN input)
@@ -48,13 +49,17 @@ vs2ps VS(VS_IN input)
 	uint width, height, levels;
 	WorldXYZ.GetDimensions(0, width, height, levels);
 	
+	float4 positionLookup;
 	float4 position;
-	position.xyz = WorldXYZ[float2(width, height) * input.TexCd.xy];
+	positionLookup = WorldXYZ[float2(width, height) * input.TexCd.xy];
+	position.xyz = positionLookup.xyz;
 	position.w = 1.0f;
 	
     vs2ps Out = (vs2ps)0;
     Out.PosWVP  = mul(position,mul(tW,tVP));
     Out.TexCd = mul(input.TexCd, tTex);
+	Out.Discard = positionLookup.w <= 0.0f;
+	
     return Out;
 }
 
@@ -63,6 +68,10 @@ vs2ps VS(VS_IN input)
 
 float4 PS(vs2ps In): SV_Target
 {
+	if (In.Discard)
+	{
+		discard;
+	}
 	return Color.Sample(g_samLinear, In.TexCd.xy);
 }
 

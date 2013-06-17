@@ -1,0 +1,37 @@
+Texture2D<float> tex0: PREVIOUS;
+
+float2 R:TARGETSIZE;
+
+cbuffer controls:register(b0){
+	float4x4 tInverseWorldProjection;
+};
+
+float4 pUnproject(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_Target{
+	uint2 pixelCoord = R * x;
+	
+	float4 PosP;
+	PosP.z = tex0[pixelCoord];
+	PosP.xy = x;
+	
+	PosP.xy *= 2.0f;
+	PosP.x -= 1.0f;
+	PosP.y = 1.0f - PosP.y;
+	
+	PosP.w = 1.0f;
+	
+	float4 PosW = mul(PosP, tInverseWorldProjection);
+	PosW /= PosW.w;
+	PosW.a = PosP.z > -1.0f && PosP.z < 1.0f;
+	
+	return PosW;
+}
+
+technique10 Unproject{
+	pass P0 <string format="R32G32B32A32_Float";>
+	{
+		SetPixelShader(CompileShader(ps_4_0,pUnproject()));
+	}
+}
+
+
+
