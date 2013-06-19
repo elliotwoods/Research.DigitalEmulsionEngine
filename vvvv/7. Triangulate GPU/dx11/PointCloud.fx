@@ -6,14 +6,6 @@
 Texture2D<float4> WorldXYZ <string uiname="World";>;
 Texture2D Color <string uiname="Texture";>;
 
-SamplerState g_samLinear : IMMUTABLE
-{
-    Filter = MIN_MAG_MIP_LINEAR;
-    AddressU = Clamp;
-    AddressV = Clamp;
-};
-
- 
 cbuffer cbPerDraw : register( b0 )
 {
 	float4x4 tVP : VIEWPROJECTION;
@@ -40,8 +32,9 @@ struct VS_IN
 struct vs2ps
 {
     float4 PosWVP: SV_POSITION;
-    float4 TexCd: TEXCOORD0;
+	float4 TexCd : TEXCOORD0;
 	bool Discard : TEXCOORD1;
+	float4 Color : COLOR0;
 };
 
 vs2ps VS(VS_IN input)
@@ -56,9 +49,12 @@ vs2ps VS(VS_IN input)
 	position.w = 1.0f;
 	
     vs2ps Out = (vs2ps)0;
-    Out.PosWVP  = mul(position,mul(tW,tVP));
+    
+	Out.PosWVP  = mul(position,mul(tW,tVP));
     Out.TexCd = mul(input.TexCd, tTex);
 	Out.Discard = positionLookup.w <= 0.0f;
+	
+	Out.Color = Color[float2(width, height) * input.TexCd.xy];
 	
     return Out;
 }
@@ -66,25 +62,36 @@ vs2ps VS(VS_IN input)
 
 
 
-float4 PS(vs2ps In): SV_Target
+float4 PSDiscard(vs2ps In): SV_Target
 {
 	if (In.Discard)
 	{
 		discard;
 	}
-	return Color.Sample(g_samLinear, In.TexCd.xy);
+	return In.Color;
+}
+
+float4 PSAll(vs2ps In): SV_Target
+{
+	return In.Color;
 }
 
 
-
-
-
-technique10 Constant
+technique10 TriangulateAll
 {
 	pass P0
 	{
 		SetVertexShader( CompileShader( vs_4_0, VS() ) );
-		SetPixelShader( CompileShader( ps_4_0, PS() ) );
+		SetPixelShader( CompileShader( ps_4_0, PSAll() ) );
+	}
+}
+
+technique10 TriangulateAndDiscard
+{
+	pass P0
+	{
+		SetVertexShader( CompileShader( vs_4_0, VS() ) );
+		SetPixelShader( CompileShader( ps_4_0, PSDiscard() ) );
 	}
 }
 

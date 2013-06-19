@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.6.dtd" >
-   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\3. Median tree\modules\RootBranch (Median Tree).v4p" systemname="RootBranch (Median Tree)" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\3. Media tree\Modules\RootBranch (Median Tree).v4p">
-   <BOUNDS type="Window" left="11850" top="4995" width="5865" height="11055">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.1.dtd" >
+   <PATCH nodename="C:\openFrameworks\Research.ReprojectionScanning\vvvv\3. Median tree\modules\RootBranch (Median Tree).v4p" systemname="RootBranch (Median Tree)" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\3. Media tree\Modules\RootBranch (Median Tree).v4p">
+   <BOUNDS type="Window" left="19845" top="3900" width="5865" height="11055">
    </BOUNDS>
    <NODE systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow" id="0">
    <BOUNDS type="Node" left="450" top="8325" width="100" height="100">
@@ -47,7 +47,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1680" top="7590" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" visible="1">
+   <PIN pinname="Y Input Value" visible="1" slicecount="2" values="1000,1024">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -147,8 +147,6 @@
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="19" srcpinname="Output Node" dstnodeid="3" dstpinname="Texture">
-   </LINK>
-   <LINK srcnodeid="11" srcpinname="Output" dstnodeid="4" dstpinname="Y Input Value">
    </LINK>
    <NODE id="20" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Resolution">
@@ -289,5 +287,7 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="28" srcpinname="Time" dstnodeid="29" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Output" dstnodeid="4" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

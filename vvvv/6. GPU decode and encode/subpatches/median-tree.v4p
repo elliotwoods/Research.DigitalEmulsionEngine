@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.6.dtd" >
-   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\2. GPU Decode sketch\subpatches\median-tree.v4p" systemname="median-tree" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\2. GPU Decode sketch\subpatches\median-tree.v4p">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.1.dtd" >
+   <PATCH nodename="C:\openFrameworks\Research.ReprojectionScanning\vvvv\6. GPU decode and encode\subpatches\median-tree.v4p" systemname="median-tree" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\2. GPU Decode sketch\subpatches\median-tree.v4p">
    <BOUNDS type="Window" left="15630" top="7080" width="9000" height="9270">
    </BOUNDS>
    <NODE systemname="IOBox (Node)" nodename="IOBox (Node)" componentmode="InABox" id="0">
@@ -51,7 +51,7 @@
    </PIN>
    <PIN pinname="Grid Resolution" visible="1">
    </PIN>
-   <BOUNDS type="Window" left="11850" top="4995" width="5865" height="11055">
+   <BOUNDS type="Window" left="19845" top="3900" width="5865" height="11055">
    </BOUNDS>
    <PIN pinname="Time" visible="1">
    </PIN>
@@ -247,6 +247,8 @@
    </PIN>
    <PIN pinname="Time" visible="1">
    </PIN>
+   <BOUNDS type="Window" left="4125" top="5835" width="12525" height="9300">
+   </BOUNDS>
    </NODE>
    <LINK srcnodeid="11" srcpinname="Output" dstnodeid="12" dstpinname="Input">
    </LINK>

@@ -1,0 +1,24 @@
+Texture2D tex0: PREVIOUS <string uiname="World XYZA";>;
+
+float2 R:TARGETSIZE;
+
+cbuffer controls:register(b0){
+	float Width <float uimin=0.0;float uimax=1.0;> = 1.0f;
+	float3 Center = float3(0,0,0);
+};
+
+float4 pSphere(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_Target{	
+	float4 PosWA = tex0[R * x];
+	
+	return length(PosWA.xyz - Center) < Width && PosWA.a > 0;
+}
+
+technique10 Sphere {
+	pass P0 <bool mips=true;>
+	{
+		SetPixelShader(CompileShader(ps_4_0,pSphere()));
+	}
+}
+
+
+

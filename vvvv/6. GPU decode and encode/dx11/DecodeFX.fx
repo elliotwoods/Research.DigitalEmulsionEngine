@@ -1,5 +1,5 @@
-Texture2D Input;
-Texture2D<float> Mean;
+Texture2D<float> Input;
+Texture2D<float2> MedianAndDistance;
 Texture2D<uint2> Previous <string uiname="Previous";>;
 
 SamplerState g_samLinear : IMMUTABLE
@@ -18,7 +18,7 @@ cbuffer cbPerDraw : register( b0 )
 	int FrameIndex <int uimin=0; int uistep=1;> = 0;
 	int FrameCountX <int uimin=0; int uistep=1;> = 10;
 	bool Clear <bool bang=true;> = false;
-	float ThresholdOffset <float uimin=0.0;float uimax=1.0;> = 1.0f / 255.0f;
+	float DistanceThreshold <float uimin=0.0;float uimax=1.0;> = 10.0f / 255.0f;
 };
 
 
@@ -54,14 +54,14 @@ uint2 PS(vs2ps In): SV_Target
 	float2 uv = R * In.TexCd.xy;
     
 	float input = Input[uv].r;
-	float mean = Mean[uv];
+	float2 medianAndDistance = MedianAndDistance[uv];
 	uint2 value = Previous[uv];
 	
 	if (Clear) {
 		value = (uint2) 0;
 	}
 	
-	bool high = input > mean + ThresholdOffset;
+	bool high = input > medianAndDistance.r & medianAndDistance.g > DistanceThreshold;
 	
 	if (FrameIndex < FrameCountX) {
 		int mask = 1 << FrameIndex;
