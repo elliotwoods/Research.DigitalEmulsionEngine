@@ -1,13 +1,6 @@
 float2 R:TARGETSIZE;
 Texture2D tex0 : PREVIOUS;
 
-SamplerState g_samLinear : IMMUTABLE
-{
-    Filter = MIN_MAG_MIP_LINEAR;
-    AddressU = Clamp;
-    AddressV = Clamp;
-};
-
 cbuffer controls:register(b0){
 	int FrameIndex = 0;
 	int PayloadWidth = 1024;
