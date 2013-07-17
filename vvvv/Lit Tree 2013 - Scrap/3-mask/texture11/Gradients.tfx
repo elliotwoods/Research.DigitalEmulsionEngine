@@ -1,0 +1,44 @@
+Texture2D tex0: PREVIOUS;
+Texture2D tex1 <string uiname="Texture In 2";>;
+SamplerState s0 <bool visible=false;string uiname="Sampler";> {Filter=MIN_MAG_MIP_LINEAR;AddressU=WRAP;AddressV=WRAP;};
+
+float2 R:TARGETSIZE;
+
+cbuffer controls:register(b0){
+	float Alpha = 1.0f;
+	float Phase = 0.0;
+	float Wavelength = 1.0f;
+	float Frequency = 1.0f;
+	
+	float2 center = float2(0.5, 0.5);
+	
+	float4 cAmb <bool color=true;String uiname="Color";> = { 1.0f,1.0f,1.0f,1.0f };
+};
+
+float4 pLine(float4 PosWVP:SV_POSITION,float2 uv:TEXCOORD0):SV_Target{
+	
+	float4 mask = tex0.Sample(s0, uv) * cAmb;
+	return mask * sin(Phase * Frequency+ uv.y / Wavelength) * Alpha;
+}
+
+float4 pCircle(float4 PosWVP:SV_POSITION,float2 uv:TEXCOORD0):SV_Target{
+	
+	float4 mask = tex0.Sample(s0, uv) * cAmb;
+	return mask * sin(Phase * Frequency + length(uv.xy - center) / Wavelength) * Alpha;
+}
+
+
+technique10 Linear{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,pLine()));
+	}
+}
+
+technique10 Circular{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,pCircle()));
+	}
+}
+

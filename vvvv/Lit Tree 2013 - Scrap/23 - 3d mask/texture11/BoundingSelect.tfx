@@ -1,0 +1,34 @@
+Texture2D tex0: PREVIOUS;
+SamplerState s0 <bool visible=false;string uiname="Sampler";> {Filter=MIN_MAG_MIP_POINT;AddressU=WRAP;AddressV=WRAP;};
+
+float2 R:TARGETSIZE;
+
+cbuffer controls:register(b0){
+	float4x4 InverseBoxTransform;
+	float4x4 Alignment;
+};
+
+float4 pBoundingSelect(float4 PosWVP:SV_POSITION,float2 uv:TEXCOORD0):SV_Target{
+	
+	float4 xyza = tex0.Sample(s0, uv);
+	float alpha = xyza.a;
+	
+	float4 xyzw = xyza;
+	xyzw.a = 1.0f;
+	xyzw = mul(xyzw, Alignment);
+	xyzw /= xyzw.w;
+	float4 worldSpace = xyzw;
+	
+	xyzw = mul(xyzw, InverseBoxTransform);
+	xyzw /= xyzw.w;
+	
+	return worldSpace * (
+		xyzw.x < 1.0f && xyzw.x > -1.0f &&
+		xyzw.y < 1.0f && xyzw.y > -1.0f &&
+		xyzw.z < 1.0f && xyzw.z > -1.0f) * alpha;
+}
+
+technique10 Mask{
+	pass P0
+	{SetPixelShader(CompileShader(ps_4_0,pBoundingSelect()));}
+}

@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.1.dtd" >
    <PATCH nodename="C:\openFrameworks\Research.ReprojectionScanning\vvvv\Common\Frame Index Decode.v4p" systemname="Frame Index Decode" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\Common\Frame Index Decode.v4p">
-   <BOUNDS type="Window" left="9345" top="1095" width="16695" height="16050">
+   <BOUNDS type="Window" left="7650" top="5685" width="16695" height="16050">
    </BOUNDS>
    <NODE systemname="Homography (Transform 2d)" nodename="Homography (Transform 2d)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="7305" top="915" width="100" height="100">
@@ -10,54 +10,6 @@
    <PIN pinname="Original Points XY" visible="1">
    </PIN>
    <PIN pinname="Screen Space Points XY" visible="1">
-   </PIN>
-   </NODE>
-   <NODE componentmode="InABox" id="1" nodename="IOBOX (VALUE ADVANCED)" systemname="IOBox (Value Advanced)">
-   <BOUNDS height="0" left="12090" top="7215" type="Node" width="0">
-   </BOUNDS>
-   <BOUNDS height="160" left="4983" top="4466" type="Window" width="215">
-   </BOUNDS>
-   <BOUNDS height="2310" left="12090" top="7215" type="Box" width="4050">
-   </BOUNDS>
-   <PIN pinname="Slider Constraints" slicecount="1" values="None">
-   </PIN>
-   <PIN pinname="Show Slider" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Show Value" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Y Input Value" slicecount="4" values="0.95008547008547,0.968097186155736,0.76,0.773333333333334">
-   </PIN>
-   <PIN pinname="X Input Value" pintype="Input" slicecount="4" visible="0" values="0.82474653424374,0.966604593420236,0.955555555555556,0.813573349886199">
-   </PIN>
-   <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
-   </PIN>
-   <PIN pinname="X Output Value" pintype="Output" visible="1">
-   </PIN>
-   <PIN pinname="Columns" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Show Grid" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Slider Alignment" slicecount="1" values="None">
-   </PIN>
-   <PIN pinname="Show Connections" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Minimum" slicecount="1" values="-1">
-   </PIN>
-   <PIN pinname="Maximum" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Screen Space Points|">
-   </PIN>
-   </NODE>
-   <NODE id="2" nodename="Vector (2d Join)" systemname="Vector (2d Join)">
-   <BOUNDS height="270" left="12090" top="9750" type="Node" width="4065">
-   </BOUNDS>
-   <PIN pinname="X" visible="1">
-   </PIN>
-   <PIN pinname="Y" visible="1">
-   </PIN>
-   <PIN pinname="XY" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden" id="3">
@@ -96,12 +48,12 @@
    <PIN pinname="Y In" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InABox" id="6">
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="Hidden" id="6">
    <BOUNDS type="Node" left="600" top="7230" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="600" top="7230" width="11235" height="7980">
    </BOUNDS>
-   <BOUNDS type="Window" left="4785" top="9180" width="6240" height="5085">
+   <BOUNDS type="Window" left="1860" top="2310" width="21090" height="14670">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -436,16 +388,6 @@
    </LINK>
    <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Original Points XY">
    </LINK>
-   <LINK srcnodeid="2" srcpinname="XY" dstnodeid="0" dstpinname="Screen Space Points XY" linkstyle="Bezier">
-   <LINKPOINT x="12105" y="5468">
-   </LINKPOINT>
-   <LINKPOINT x="7950" y="5468">
-   </LINKPOINT>
-   </LINK>
-   <LINK dstnodeid="2" dstpinname="X" srcnodeid="1" srcpinname="X Output Value">
-   </LINK>
-   <LINK dstnodeid="2" dstpinname="Y" srcnodeid="1" srcpinname="Y Output Value">
-   </LINK>
    <LINK srcnodeid="14" srcpinname="Output" dstnodeid="15" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="15" srcpinname="Output" dstnodeid="10" dstpinname="String">
@@ -468,6 +410,144 @@
    <LINKPOINT x="7350" y="2130">
    </LINKPOINT>
    <LINKPOINT x="10635" y="2130">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="InABox" id="33" nodename="IOBOX (VALUE ADVANCED)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="12105" top="10170" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="4983" top="4466" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="1815" left="12105" top="10170" type="Box" width="2685">
+   </BOUNDS>
+   <PIN pinname="Slider Constraints" slicecount="1" values="None">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="4" values="-0.504273504273504,-0.418803418803419,-0.914529914529915,-0.965811965811966">
+   </PIN>
+   <PIN pinname="X Input Value" pintype="Input" slicecount="4" visible="0" values="-0.240223463687151,0.106145251396649,0.094972067039105,-0.251396648044693">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
+   </PIN>
+   <PIN pinname="X Output Value" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Columns" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Slider Alignment" slicecount="1" values="None">
+   </PIN>
+   <PIN pinname="Show Connections" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Screen Space Points|">
+   </PIN>
+   </NODE>
+   <NODE id="32" nodename="Vector (2d Join)" systemname="Vector (2d Join)">
+   <BOUNDS height="270" left="12105" top="12315" type="Node" width="2700">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="32" dstpinname="X" srcnodeid="33" srcpinname="X Output Value">
+   </LINK>
+   <LINK dstnodeid="32" dstpinname="Y" srcnodeid="33" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="31" nodename="IOBOX (VALUE ADVANCED)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="14910" top="10170" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="4983" top="4466" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="1815" left="14910" top="10170" type="Box" width="2685">
+   </BOUNDS>
+   <PIN pinname="Slider Constraints" slicecount="1" values="None">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="-0.9">
+   </PIN>
+   <PIN pinname="X Input Value" pintype="Input" slicecount="1" visible="0" values="-0.9">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
+   </PIN>
+   <PIN pinname="X Output Value" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Columns" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Slider Alignment" slicecount="1" values="None">
+   </PIN>
+   <PIN pinname="Show Connections" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="-0.9">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="0.9">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Screen Space Points|">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   </NODE>
+   <NODE id="30" nodename="Vector (2d Join)" systemname="Vector (2d Join)">
+   <BOUNDS height="270" left="14910" top="12315" type="Node" width="2700">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="30" dstpinname="X" srcnodeid="31" srcpinname="X Output Value">
+   </LINK>
+   <LINK dstnodeid="30" dstpinname="Y" srcnodeid="31" srcpinname="Y Output Value">
+   </LINK>
+   <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="29">
+   <BOUNDS type="Node" left="12105" top="13305" width="2850" height="270">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="30" srcpinname="XY" dstnodeid="29" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="12105" top="12825" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="0.1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="32" srcpinname="XY" dstnodeid="28" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="28" srcpinname="Output" dstnodeid="29" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="29" srcpinname="Output" dstnodeid="0" dstpinname="Screen Space Points XY" linkstyle="Bezier">
+   <LINKPOINT x="12120" y="7245">
+   </LINKPOINT>
+   <LINKPOINT x="7935" y="7245">
    </LINKPOINT>
    </LINK>
    </PATCH>

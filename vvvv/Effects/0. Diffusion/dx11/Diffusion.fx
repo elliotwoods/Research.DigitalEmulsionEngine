@@ -3,7 +3,7 @@
 //@tags: color
 //@credits: 
 
-#define SearchStep 2
+#define SearchStep 4
 #define SearchIterationsXY 5
 
 Texture2D TexInk <string uiname="Ink";>;
@@ -78,7 +78,7 @@ float4 PS(vs2ps In): SV_Target
 		{
 			if (i == j)
 				continue;
-			uint2 Coord = (uint2) ((int2) PixelCoord + int2(i, j));
+			uint2 Coord = (uint2) ((int2) PixelCoord + int2(i * SearchStep, j * SearchStep));
 			bool valid = !(Coord.x < 0 || Coord.y < 0 || Coord.x >= R.x || Coord.y >= R.y);
 			
 			float4 InkAtCoord = TexInk[Coord];
@@ -91,10 +91,12 @@ float4 PS(vs2ps In): SV_Target
 			float distanceToPoint = length(PositionAtCoord - position);
 			
 			value.rgb += valid * dt * InkAtCoord.rgb * DiffusionFactor * MaxDistance / distanceToPoint;
+			//value.rgb += InkAtCoord.rgb * DiffusionFactor * valid;
+			value.rgb = clamp(value.rgb, 0, 1.0f);
 		}
 	}
 	
-    return value;
+    return value * Alpha;
 }
 
 

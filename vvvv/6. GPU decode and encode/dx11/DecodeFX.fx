@@ -56,6 +56,7 @@ uint2 PS(vs2ps In): SV_Target
 	float input = Input[uv].r;
 	float2 medianAndDistance = MedianAndDistance[uv];
 	uint2 value = Previous[uv];
+	uint maskAll = (1 << 30) - 1;
 	
 	if (Clear) {
 		value = (uint2) 0;
@@ -68,14 +69,14 @@ uint2 PS(vs2ps In): SV_Target
 		if (high) {
 			value.x = value.x | mask;
 		} else {
-			value.x = value.x & (65535 - mask);
+			value.x = value.x & (maskAll - mask);
 		}
 	} else {
 		int mask = 1 << (FrameIndex - FrameCountX);
 		if (high) {
 			value.y = value.y | mask;
 		} else {
-			value.y = value.y & (65535 - mask);
+			value.y = value.y & (maskAll - mask);
 		}
 	}
 	

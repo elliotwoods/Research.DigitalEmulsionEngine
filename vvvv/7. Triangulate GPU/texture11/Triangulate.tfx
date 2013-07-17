@@ -7,6 +7,7 @@ cbuffer controls:register(b0){
 	float4 CameraDistortion;
 	float4x4 InverseProjectorViewProjectionMatrix;
 	float MaxLength = 0.01f;
+	float4x4 Transform;
 };
 
 class Ray
@@ -124,21 +125,39 @@ float2 getCoord(float2 textureCoord)
 	return coord;	
 }
 
-float3 pTriangulate(float4 PosWVP:SV_POSITION,float2 texcoord:TEXCOORD0):SV_Target
+float2 Undistort(float2 coord, float4 distortion)
+{
+	float r = length(coord);
+	float rad_coeff = 1 + distortion.x*r*r + distortion.y*r*r*r*r;
+	
+	float xn = coord.x*rad_coeff, yn = coord.y*rad_coeff;
+	xn += 2*distortion.z*xn*yn + distortion.w*(r*r+2*xn*xn);
+	yn += distortion.z*(r*r+2*yn*yn) + 2*distortion.w*xn*yn;
+	return float2(xn, yn);
+}
+
+float4 pTriangulate(float4 PosWVP:SV_POSITION,float2 texcoord:TEXCOORD0):SV_Target
 {
 	float2 projectorCoord = getCoord(texcoord);
 	float2 cameraCoord = getCoord(CinP[getPixelCoord(texcoord)]);
+	cameraCoord = Undistort(cameraCoord, CameraDistortion);
 	
 	Ray cameraRay = castCoordinate(cameraCoord, CameraDistortion, InverseCameraProjectionMatrix);
 	Ray projectorRay = castCoordinate(projectorCoord, InverseProjectorViewProjectionMatrix);
 	
 	Ray intersect = cameraRay.intersect(projectorRay);
 	
-	float killRay = intersect.getLength() > MaxLength;
+	float4 output;
+	output.xyz = intersect.getMidPoint();
+	output.w = 1.0f;
 	
-	intersect.s *= killRay;
+	float valid = intersect.getLength() < MaxLength;
 	
-	return intersect.getMidPoint();;
+	output = mul(output, Transform);
+	output /= output.w;
+	output.w = valid;
+	
+	return output;
 }
 
 technique10 Triangulate{

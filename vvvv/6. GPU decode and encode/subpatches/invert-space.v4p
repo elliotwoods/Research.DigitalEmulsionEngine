@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.6.dtd" >
-   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\5. GPU decode and encode\subpatches\invert-space.v4p" systemname="invert-space" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\5. GPU decode and encode\subpatches\invert-space.v4p">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.1.dtd" >
+   <PATCH nodename="C:\openFrameworks\Research.ReprojectionScanning\vvvv\6. GPU decode and encode\subpatches\invert-space.v4p" systemname="invert-space" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\5. GPU decode and encode\subpatches\invert-space.v4p">
    <BOUNDS type="Window" left="11535" top="7785" width="6165" height="9045">
    </BOUNDS>
    <NODE systemname="InvertDataset (DX11.Effect)" filename="..\dx11\InvertDataset.fx" nodename="InvertDataset (DX11.Effect)" componentmode="Hidden" id="0">
@@ -32,6 +32,8 @@
    <PIN pinname="Buffers" visible="1">
    </PIN>
    <PIN pinname="Clear" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Target Format" slicecount="1" values="R16G16_UInt">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="2" systemname="IOBox (Value Advanced)">

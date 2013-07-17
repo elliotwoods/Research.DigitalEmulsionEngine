@@ -107,9 +107,9 @@
    </PIN>
    </NODE>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="13">
-   <BOUNDS type="Node" left="2775" top="2385" width="100" height="100">
+   <BOUNDS type="Node" left="3180" top="2385" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="2775" top="2385" width="795" height="240">
+   <BOUNDS type="Box" left="3180" top="2385" width="795" height="240">
    </BOUNDS>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
@@ -185,23 +185,27 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="Pow2Sqrt (Value)" filename="Pow2Sqrt (Value).v4p" nodename="Pow2Sqrt (Value).v4p" componentmode="Hidden" id="22">
-   <BOUNDS type="Node" left="2777" top="4090" width="0" height="0">
+   <BOUNDS type="Node" left="3182" top="4090" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="1025" top="1473" width="3505" height="5235">
+   <BOUNDS type="Box" left="1430" top="1473" width="3505" height="5235">
    </BOUNDS>
    <BOUNDS type="Window" left="15120" top="8025" width="5310" height="5175">
    </BOUNDS>
+   <PIN pinname="Columns" visible="1">
+   </PIN>
+   <PIN pinname="Rows" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="22" srcpinname="Rows" dstnodeid="10" dstpinname="X" linkstyle="Bezier">
-   <LINKPOINT x="2775" y="4980">
+   <LINKPOINT x="3045" y="4980">
    </LINKPOINT>
-   <LINKPOINT x="2010" y="4980">
+   <LINKPOINT x="2145" y="4980">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="22" srcpinname="Columns" dstnodeid="10" dstpinname="Y" linkstyle="Bezier">
-   <LINKPOINT x="3660" y="4973">
+   <LINKPOINT x="3930" y="4973">
    </LINKPOINT>
-   <LINKPOINT x="2535" y="4973">
+   <LINKPOINT x="2670" y="4973">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="22" dstpinname="Input Real">
@@ -213,18 +217,14 @@
    </BOUNDS>
    <BOUNDS type="Window" left="16410" top="11610" width="4440" height="4065">
    </BOUNDS>
+   <PIN pinname="Rows" visible="1">
+   </PIN>
+   <PIN pinname="Columns" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="23" srcpinname="Transform Out" dstnodeid="0" dstpinname="View">
    </LINK>
    <LINK srcnodeid="7" srcpinname="Y Output Value" dstnodeid="23" dstpinname="Index">
-   </LINK>
-   <LINK srcnodeid="22" srcpinname="Rows" dstnodeid="23" dstpinname="Rows">
-   </LINK>
-   <LINK srcnodeid="22" srcpinname="Columns" dstnodeid="23" dstpinname="Columns" linkstyle="Bezier">
-   <LINKPOINT x="3690" y="5550">
-   </LINKPOINT>
-   <LINKPOINT x="3195" y="5550">
-   </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="26" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3195" top="8925" width="795" height="480">
@@ -246,22 +246,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|Grid Resolution|">
    </PIN>
    </NODE>
-   <NODE systemname="Reverse (Spreads)" nodename="Reverse (Spreads)" componentmode="Hidden" id="27">
-   <BOUNDS type="Node" left="3195" top="8325" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="27" srcpinname="Output" dstnodeid="26" dstpinname="Y Input Value">
-   </LINK>
-   <LINK srcnodeid="10" srcpinname="XY" dstnodeid="27" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="2010" y="7095">
-   </LINKPOINT>
-   <LINKPOINT x="3210" y="7095">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="TimeStamp (DX11.Query)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="TimeStamp (DX11.Query)" componentmode="Hidden" id="28">
    <BOUNDS type="Node" left="4200" top="8610" width="100" height="100">
    </BOUNDS>
@@ -289,5 +273,19 @@
    <LINK srcnodeid="28" srcpinname="Time" dstnodeid="29" dstpinname="Y Input Value">
    </LINK>
    <LINK srcnodeid="11" srcpinname="Output" dstnodeid="4" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Columns" dstnodeid="23" dstpinname="Rows" linkstyle="Bezier">
+   <LINKPOINT x="4080" y="5550">
+   </LINKPOINT>
+   <LINKPOINT x="2805" y="5550">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Rows" dstnodeid="23" dstpinname="Columns">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="XY" dstnodeid="26" dstpinname="Y Input Value" linkstyle="Bezier">
+   <LINKPOINT x="2010" y="7395">
+   </LINKPOINT>
+   <LINKPOINT x="3210" y="7395">
+   </LINKPOINT>
    </LINK>
    </PATCH>

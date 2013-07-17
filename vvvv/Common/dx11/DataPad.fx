@@ -22,6 +22,7 @@ cbuffer cbPerDraw : register( b0 )
 cbuffer cbPerObj : register( b1 )
 {
 	float4x4 tW : WORLD;
+	float Brightness = 1.0f;
 
 };
 
@@ -53,7 +54,7 @@ float4 PS(vs2ps In): SV_Target
 {
     float value = texture2d.Sample(g_samNearest,In.TexCd.xy);
 	float4 output;
-	output.rgb = value;
+	output.rgb = value * Brightness;
 	output.a = 1.0f;
 	return output;
 }

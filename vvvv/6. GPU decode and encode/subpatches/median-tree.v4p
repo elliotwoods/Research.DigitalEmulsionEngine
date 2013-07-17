@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.1.dtd" >
    <PATCH nodename="C:\openFrameworks\Research.ReprojectionScanning\vvvv\6. GPU decode and encode\subpatches\median-tree.v4p" systemname="median-tree" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\2. GPU Decode sketch\subpatches\median-tree.v4p">
-   <BOUNDS type="Window" left="15630" top="7080" width="9000" height="9270">
+   <BOUNDS type="Window" left="15630" top="7080" width="9945" height="9270">
    </BOUNDS>
    <NODE systemname="IOBox (Node)" nodename="IOBox (Node)" componentmode="InABox" id="0">
    <BOUNDS type="Node" left="3075" top="330" width="100" height="100">
@@ -39,6 +39,8 @@
    </PIN>
    <PIN pinname="Time" visible="1">
    </PIN>
+   <BOUNDS type="Window" left="14235" top="4140" width="12525" height="9300">
+   </BOUNDS>
    </NODE>
    <NODE systemname="RootBranch (Median Tree)" filename="..\..\3. Median tree\modules\RootBranch (Median Tree).v4p" nodename="RootBranch (Median Tree)" componentmode="Hidden" id="3">
    <BOUNDS type="Node" left="3075" top="2085" width="4035" height="270">
@@ -269,7 +271,7 @@
    <LINK srcnodeid="10" srcpinname="Grid Resolution" dstnodeid="11" dstpinname="Grid Resolution">
    </LINK>
    <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="13">
-   <BOUNDS type="Node" left="4320" top="6945" width="2790" height="270">
+   <BOUNDS type="Node" left="4320" top="6945" width="4620" height="270">
    </BOUNDS>
    <PIN pinname="Input Count" slicecount="1" values="7">
    </PIN>
@@ -354,6 +356,34 @@
    <BOUNDS type="Box" left="15" top="2190" width="2850" height="1125">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|There is a bug inside Generation, whereby we have to deal with strange resolutions (i.e. not the actual resolutions). This appears to cause some aliasing in the output|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="22" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="1935" top="7530" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1935" top="7530" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Root">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="22" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="3090" y="4943">
+   </LINKPOINT>
+   <LINKPOINT x="1965" y="4943">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="24" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="660" top="3375" width="1785" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="660" top="3375" width="1785" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|was this fixed recently?|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>

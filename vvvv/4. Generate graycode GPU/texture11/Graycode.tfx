@@ -3,8 +3,6 @@ Texture2D tex0 : PREVIOUS;
 
 cbuffer controls:register(b0){
 	int FrameIndex = 0;
-	int PayloadWidth = 1024;
-	int PayloadHeight = 768;
 };
 
 int toGraycode(int binary) {
@@ -15,7 +13,7 @@ float pEncode(float4 PosWVP:SV_POSITION,float2 texcoord:TEXCOORD0):SV_TARGET{
 	int x = (R * texcoord).x;
 	int y = (R * texcoord).y;
 	
-	int FrameCountX = ceil(log2( (float) PayloadWidth) );
+	int FrameCountX = ceil(log2(R.x) );
 	
 	int value;
 	int bit;

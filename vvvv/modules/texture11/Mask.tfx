@@ -1,0 +1,19 @@
+Texture2D tex0: PREVIOUS;
+Texture2D tex1 <string uiname="Mask";>;
+SamplerState s0 <bool visible=false;string uiname="Sampler";> {Filter=MIN_MAG_MIP_LINEAR;AddressU=WRAP;AddressV=WRAP;};
+
+float2 R:TARGETSIZE;
+
+cbuffer controls:register(b0){
+	float Alpha = 1.0f;
+};
+
+float4 pWave(float4 PosWVP:SV_POSITION,float2 uv:TEXCOORD0):SV_Target{
+	
+	return tex0.Sample(s0, uv) * tex1.Sample(s0, uv) * Alpha;
+}
+
+technique10 Mask{
+	pass P0
+	{SetPixelShader(CompileShader(ps_4_0,pWave()));}
+}

@@ -188,7 +188,7 @@
    <LINKPOINT x="5095" y="3620">
    </LINKPOINT>
    </LINK>
-   <BOUNDS type="Window" left="14235" top="7425" width="6720" height="6840">
+   <BOUNDS type="Window" left="18885" top="6465" width="6720" height="6840">
    </BOUNDS>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="15" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3525" top="2460" width="795" height="240">
@@ -211,5 +211,25 @@
    <LINK srcnodeid="12" srcpinname="Output Node" dstnodeid="0" dstpinname="MedianAndDistance">
    </LINK>
    <LINK srcnodeid="15" srcpinname="Y Output Value" dstnodeid="0" dstpinname="DistanceThreshold">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="16" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5670" top="180" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5670" top="180" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Enabled">
    </LINK>
    </PATCH>

@@ -1,0 +1,47 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.1.dtd" >
+   <PATCH nodename="C:\openFrameworks\Research.ReprojectionScanning\vvvv\modules\Flip (DX11.TextureFX).v4p" systemname="Flip (DX11.TextureFX)" filename="C:\openFrameworks\Research.ReprojectionScanning\vvvv\modules\Flip (DX11.TextureFX).v4p">
+   <BOUNDS type="Window" left="15990" top="4620" width="9000" height="6000">
+   </BOUNDS>
+   <NODE systemname="TransformTexture (DX11.TextureFX)" filename="%VVVV%\packs\DX11\nodes\texture11\Filter\TransformTexture.tfx" nodename="TransformTexture (DX11.TextureFX)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="570" top="1005" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="tTex" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="1" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="570" top="330" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="570" top="330" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Texture In|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Output Node" dstnodeid="0" dstpinname="Texture In">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="2" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="570" top="1485" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="570" top="1485" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Texture Out|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Texture Out" dstnodeid="2" dstpinname="Input Node">
+   </LINK>
+   <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="1485" top="345" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Z" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Transform Out" dstnodeid="0" dstpinname="tTex" linkstyle="VHV">
+   <LINKPOINT x="1485" y="795">
+   </LINKPOINT>
+   <LINKPOINT x="975" y="795">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>

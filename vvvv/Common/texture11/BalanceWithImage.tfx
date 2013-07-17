@@ -1,0 +1,32 @@
+Texture2D<float> Signal : PREVIOUS <string uiname="Signal";>;
+Texture2D<float> Image;
+
+float2 R:TARGETSIZE;
+
+cbuffer controls:register(b0){
+	float2 Poly = float2(0.6519, -.1097);
+	float SignalAmplitude = 0.3f;
+	float ImageAmplitude = 1.0f;
+	float Alpha = 1.0f;
+};
+
+float4 pBalanceWithImage(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+    int2 texCd = R * x;
+	
+	float signal = Signal[texCd];
+	float A = SignalAmplitude;
+	float fA = A * Poly.x + (Poly.y / 255.0f);
+	
+	A *= signal;
+	fA *= 1.0f - signal;
+	
+	fA += (1.0f - fA) * Image[texCd] * ImageAmplitude;
+	
+	return float4(fA, 0, A, Alpha);
+}
+
+technique10 BalanceWithImage{
+	pass P1	<float scale=1.0;string format="R8G8B8A8_UNorm";> {
+		SetPixelShader(CompileShader(ps_4_0,pBalanceWithImage()));
+	}
+}

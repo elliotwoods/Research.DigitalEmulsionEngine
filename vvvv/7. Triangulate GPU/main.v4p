@@ -175,6 +175,8 @@
    </PIN>
    <PIN pinname="Projection" visible="1">
    </PIN>
+   <PIN pinname="Inital Distance" slicecount="1" values="2">
+   </PIN>
    </NODE>
    <LINK srcnodeid="14" srcpinname="View" dstnodeid="13" dstpinname="View">
    </LINK>
@@ -425,7 +427,7 @@
    </PIN>
    <PIN pinname="Transform In" visible="1">
    </PIN>
-   <PIN pinname="Y" slicecount="1" values="0.14">
+   <PIN pinname="Y" slicecount="1" values="-0.18">
    </PIN>
    <PIN pinname="Z" slicecount="1" values="-0.22">
    </PIN>
@@ -533,7 +535,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2235" top="7110" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" values="0.15,0,0,0">
+   <PIN pinname="Y Input Value" slicecount="4" values="0.14,-0.02,0,0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>

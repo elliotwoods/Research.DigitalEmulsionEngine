@@ -1,0 +1,70 @@
+Texture2D tex0: PREVIOUS <string uiname="World XYZ";>;
+
+float2 R:TARGETSIZE;
+
+cbuffer controls:register(b0){
+	float4 Color1 <bool color=true;> =float4(1,1,1,1);
+	float4 Color2 <bool color=true;> =float4(0,0,0,1);
+	float4 ColorUnder <bool color=true;> =float4(0,0,0,1);
+	float4x4 Transform;
+	float Thickness = 0.1f;
+	float Alpha = 1.0f;
+	
+	float Phase = 0.0f;
+	float Wavelength = 1.0f;
+	float Frequency = 1.0f;
+	float Amplitude = 1.0f;
+};
+
+SamplerState s0:IMMUTABLE{Filter=MIN_MAG_MIP_POINT;AddressU=CLAMP;AddressV=CLAMP;};
+
+float4 GetPositionAndAlpha(float2 x)
+{
+	float4 xyza = tex0.Sample(s0, x);
+	
+	float alpha = xyza.a;
+	float4 xyzw = xyza;
+	xyzw.w = 1.0f;
+	
+	xyzw = mul(xyzw, Transform);
+	xyzw /= xyzw.w;
+	
+	xyza.xyz = xyzw.xyz;
+	return xyza;
+}
+
+float4 pLine(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+	
+	float4 xyza = GetPositionAndAlpha(x);
+	float4 col = (float4) 1.0f;
+	float value = 1.0f - smoothstep(0, Thickness, abs(xyza.y));
+	col = lerp(Color2, Color1, value);
+	
+	return col * xyza.a * Alpha;
+}
+
+float4 pSphere(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+	return 1;
+}
+
+float4 pWave(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+	float4 xyza = GetPositionAndAlpha(x);
+	float4 col = (float4) 1.0f;
+	
+	float height = Amplitude * sin( length(xyza.xz) / Wavelength + Phase * Frequency);
+	
+	float value = 1.0f - smoothstep(0, Thickness, abs(xyza.y - height));
+	float under = height - xyza.y;
+	under = clamp(under, -1.0f, 0.0f);
+	
+	col = lerp(Color2, Color1, value);
+	col += (1.0f - under) * ColorUnder;
+	return col * xyza.a * Alpha;
+}
+
+technique10 Line{pass P1{SetPixelShader(CompileShader(ps_4_0,pLine()));}}
+technique10 Sphere{pass P1{SetPixelShader(CompileShader(ps_4_0,pSphere()));}}
+technique10 Wave{pass P1{SetPixelShader(CompileShader(ps_4_0,pWave()));}}
+
+
+

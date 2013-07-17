@@ -57,7 +57,7 @@
    </PIN>
    <PIN pinname="Texture SizeXY" visible="1">
    </PIN>
-   <PIN pinname="Clear" slicecount="1" values="0">
+   <PIN pinname="Clear" slicecount="1" values="0" visible="1">
    </PIN>
    <PIN pinname="Query" visible="1">
    </PIN>
@@ -447,5 +447,23 @@
    </LINKPOINT>
    <LINKPOINT x="9840" y="8318">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="31">
+   <BOUNDS type="Node" left="4470" top="6390" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4470" top="6390" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="31" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Clear">
    </LINK>
    </PATCH>

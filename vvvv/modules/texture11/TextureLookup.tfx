@@ -1,0 +1,20 @@
+Texture2D<uint2> lookup: PREVIOUS <string uiname="Lookup";>;
+Texture2D tex <string uiname="Image";>;
+
+SamplerState s0 <bool visible=false;string uiname="Sampler";> {Filter=MIN_MAG_MIP_LINEAR;AddressU=CLAMP;AddressV=CLAMP;};
+float2 R:TARGETSIZE;
+
+cbuffer controls:register(b0){
+};
+
+float4 pLookupInt(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+	return tex[lookup[R * x]];
+}
+
+
+technique10 LookupInt{
+	pass P1 <string format="R8G8B8A8_UNorm"; >
+	{
+		SetPixelShader(CompileShader(ps_5_0,pLookupInt()));
+	}
+}
