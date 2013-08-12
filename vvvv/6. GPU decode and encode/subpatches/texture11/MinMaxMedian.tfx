@@ -1,0 +1,24 @@
+Texture2D<float2> tex0: PREVIOUS;
+
+float2 R:TARGETSIZE;
+
+SamplerState s0 <bool visible=false;string uiname="Sampler";> {
+	Filter=MIN_MAG_MIP_LINEAR;
+	AddressU=CLAMP;
+	AddressV=CLAMP;
+};
+
+float pNormalise(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0) : SV_Target{
+	float2 MinMax = tex0.Sample(s0, x);
+	return ( (1.0f - MinMax.r) + MinMax.g) / 2.0f;
+}
+
+technique10 Median{
+	pass P0 <string format="R16_Float"; >
+	{
+		SetPixelShader(CompileShader(ps_4_0,pNormalise()));
+	}
+}
+
+
+

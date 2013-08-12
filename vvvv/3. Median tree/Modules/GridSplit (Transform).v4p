@@ -1,0 +1,105 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.6.dtd" >
+   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\3. Media tree\Modules\GridSplit (Transform).v4p" systemname="GridSplit (Transform)" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\3. Media tree\Modules\GridSplit (Transform).v4p">
+   <NODE systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="600" top="1350" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="600" top="2145" width="1440" height="270">
+   </BOUNDS>
+   <PIN pinname="TranslateX" visible="1">
+   </PIN>
+   <PIN pinname="TranslateY" visible="1">
+   </PIN>
+   <PIN pinname="ScaleX" visible="1">
+   </PIN>
+   <PIN pinname="ScaleY" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GridSplit (2d)" nodename="GridSplit (2d)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="780" top="1755" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Width" visible="1">
+   </PIN>
+   <PIN pinname="Height" visible="1">
+   </PIN>
+   <PIN pinname="Rows">
+   </PIN>
+   <PIN pinname="Columns">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Transform Out" dstnodeid="1" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="X" dstnodeid="1" dstpinname="TranslateX">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Y" dstnodeid="1" dstpinname="TranslateY">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Width" dstnodeid="1" dstpinname="ScaleX">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Height" dstnodeid="1" dstpinname="ScaleY">
+   </LINK>
+   <NODE id="3" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Transform Out|">
+   </PIN>
+   <BOUNDS type="Box" left="600" top="2915" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="600" top="2915" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Transform Out" dstnodeid="3" dstpinname="Input Node">
+   </LINK>
+   <NODE id="4" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Index">
+   </PIN>
+   <BOUNDS type="Box" left="780" top="350" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="780" top="350" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Index">
+   </LINK>
+   <NODE id="5" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Rows">
+   </PIN>
+   <BOUNDS type="Box" left="1680" top="350" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1680" top="350" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Rows" linkstyle="Bezier">
+   <LINKPOINT x="1680" y="1170">
+   </LINKPOINT>
+   <LINKPOINT x="1125" y="1170">
+   </LINKPOINT>
+   </LINK>
+   <NODE id="6" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Columns">
+   </PIN>
+   <BOUNDS type="Box" left="2580" top="350" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2580" top="350" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Columns" linkstyle="Bezier">
+   <LINKPOINT x="2565" y="1163">
+   </LINKPOINT>
+   <LINKPOINT x="1455" y="1163">
+   </LINKPOINT>
+   </LINK>
+   <BOUNDS type="Window" left="14520" top="12025" width="4440" height="4065">
+   </BOUNDS>
+   </PATCH>
