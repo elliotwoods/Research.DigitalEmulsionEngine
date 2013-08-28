@@ -75,22 +75,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "triggerTest.cpp",
-			"settings":
-			{
-				"buffer_size": 2058,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Makefile",
-			"settings":
-			{
-				"buffer_size": 313,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/C++/C++.sublime-build",
 	"command_palette":
@@ -116,6 +100,9 @@
 	},
 	"file_history":
 	[
+		"/Volumes/SHARED/openFrameworks/apps/Research.ReprojectionScanning/c++/triggerTest/Makefile",
+		"/Volumes/SHARED/openFrameworks/apps/Research.ReprojectionScanning/c++/triggerTest/triggerTest.cpp",
+		"/Volumes/SHARED/openFrameworks/apps/Research.ReprojectionScanning/c++/triggerTest/triggerTest.sublime-project",
 		"/Volumes/SHARED/openFrameworks/apps/Research.ReprojectionScanning/c++/triggerTest/logInterval.cpp",
 		"/Users/elliot/dev/ximea/Examples/voltageTest/Makefile",
 		"/Users/elliot/dev/ximea/Examples/voltageTest/stdafx.h",
@@ -156,6 +143,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"finish",
 			"figure",
 			"mainpage",
 			"main",
@@ -183,62 +171,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "triggerTest.cpp",
-					"settings":
-					{
-						"buffer_size": 2058,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								702,
-								702
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 264.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "Makefile",
-					"settings":
-					{
-						"buffer_size": 313,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								78,
-								59
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -273,6 +207,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 25.0
+	},
 	"replace":
 	{
 		"height": 64.0

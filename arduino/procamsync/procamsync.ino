@@ -43,6 +43,7 @@ void loop() {
   unsigned long currentTime = micros();
   if (currentTime >= nextTrigger && toTrigger) {
     shootCamera();
+    Serial.println(fps);
     toTrigger = false;
   }
   //

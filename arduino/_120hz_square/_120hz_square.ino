@@ -8,7 +8,7 @@ void setup() {
 }
 
 void loop() {
-  int halfPeriod = 1e6;// / frequency / 2;
+  int halfPeriod = 1e6 / frequency / 2;
   
   digitalWrite(cameraPin, HIGH);
   digitalWrite(ledPin, HIGH);    
