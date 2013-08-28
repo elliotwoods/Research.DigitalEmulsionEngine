@@ -19,7 +19,7 @@ namespace VVVV.Nodes
 	{
 		#region fields & pins
 		[Input("Binary", DefaultValue = 1.0)]
-		ISpread<int> FInput;
+		IDiffSpread<int> FInput;
 
 		[Output("Graycode")]
 		ISpread<int> FOutput;
@@ -32,16 +32,19 @@ namespace VVVV.Nodes
 		//called when data for any output pin is requested
 		public void Evaluate(int SpreadMax)
 		{
-			FOutput.SliceCount = SpreadMax;
-			FInverse.SliceCount = SpreadMax;
-			
-			for (int i = 0; i < SpreadMax; i++)
+			if (FInput.IsChanged)
 			{
-				var binary = FInput[i];
-				var graycode = binary ^ (binary >> 1);
+				FOutput.SliceCount = SpreadMax;
+				FInverse.SliceCount = SpreadMax;
 				
-				FOutput[i] = graycode;
-				FInverse[graycode] = i;
+				for (int i = 0; i < SpreadMax; i++)
+				{
+					var binary = FInput[i];
+					var graycode = binary ^ (binary >> 1);
+					
+					FOutput[i] = graycode;
+					FInverse[graycode] = i;
+				}	
 			}
 		}
 	}

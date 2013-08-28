@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.1.dtd" >
    <PATCH nodename="C:\openFrameworks\Research.ReprojectionScanning\vvvv\Common\VideoIn (Wait on Frame 120).v4p" systemname="VideoIn (Wait on Frame 120)" filename="C:\openFrameworks\Research.ReprojectionScanning\vvvv\Common\VideoIn (Wait on Frame 120).v4p">
-   <BOUNDS type="Window" left="12735" top="7695" width="10755" height="8370">
+   <BOUNDS type="Window" left="18000" top="7785" width="10800" height="8370">
    </BOUNDS>
    <NODE systemname="VideoIn (Ximea DX11 Texture)" filename="%VVVV%\VVVV.Packs.Image\lib\nodes\plugins\VVVV.Nodes.Ximea.dll" nodename="VideoIn (Ximea DX11 Texture)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="945" top="2130" width="6885" height="270">
@@ -57,13 +57,13 @@
    <LINK srcnodeid="3" srcpinname="ParameterSet" dstnodeid="0" dstpinname="ParameterSet">
    </LINK>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="4" systemname="IOBox (Enumerations)">
-   <BOUNDS type="Box" left="5040" top="420" width="1230" height="765">
+   <BOUNDS type="Box" left="5040" top="120" width="1230" height="960">
    </BOUNDS>
-   <BOUNDS type="Node" left="5040" top="420" width="0" height="0">
+   <BOUNDS type="Node" left="5040" top="120" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="4" values="AEAG,Exposure,RegionY,RegionHeight">
+   <PIN pinname="Input Enum" slicecount="5" values="AEAG,Exposure,RegionY,RegionHeight,Gain">
    </PIN>
-   <PIN pinname="Rows" slicecount="1" values="4">
+   <PIN pinname="Rows" slicecount="1" values="5">
    </PIN>
    <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
    </PIN>
@@ -71,11 +71,11 @@
    <LINK srcnodeid="4" srcpinname="Output Enum" dstnodeid="3" dstpinname="Parameter">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="5" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="6960" top="390" width="810" height="765">
+   <BOUNDS type="Box" left="6960" top="90" width="810" height="960">
    </BOUNDS>
-   <BOUNDS type="Node" left="6960" top="390" width="0" height="0">
+   <BOUNDS type="Node" left="6960" top="90" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" values="0,8000,0,1536">
+   <PIN pinname="Y Input Value" slicecount="5" values="0,1100,0,1536,4">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -83,7 +83,7 @@
    </PIN>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
-   <PIN pinname="Rows" slicecount="1" values="4">
+   <PIN pinname="Rows" slicecount="1" values="5">
    </PIN>
    <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
    </PIN>
@@ -103,7 +103,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3690" top="1260" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -113,7 +113,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>

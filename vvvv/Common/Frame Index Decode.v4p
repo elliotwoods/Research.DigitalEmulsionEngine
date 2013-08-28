@@ -243,7 +243,7 @@
    </PIN>
    <PIN pinname="Pipet coordinates" visible="1">
    </PIN>
-   <PIN pinname="Median" visible="1">
+   <PIN pinname="Median" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
@@ -274,16 +274,6 @@
    <PIN pinname="Data" visible="1">
    </PIN>
    <BOUNDS type="Box" left="7290" top="3735">
-   </BOUNDS>
-   </NODE>
-   <NODE systemname="DynamicTexture (DX11.Texture 2d)" nodename="DynamicTexture (DX11.Texture 2d)" componentmode="Hidden" id="23" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll">
-   <BOUNDS type="Node" left="8670" top="4335" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Texture Out" visible="1">
-   </PIN>
-   <PIN pinname="Data" slicecount="1" values="0.5">
-   </PIN>
-   <BOUNDS type="Box" left="8670" top="4335">
    </BOUNDS>
    </NODE>
    <NODE systemname="Quad (DX11.Layer)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Quad (DX11.Layer)" componentmode="Hidden" id="24">
@@ -363,8 +353,6 @@
    </LINKPOINT>
    <LINKPOINT x="7305" y="4733">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="23" srcpinname="Texture Out" dstnodeid="19" dstpinname="Median" linkstyle="VHV">
    </LINK>
    <LINK srcnodeid="8" srcpinname="Layer" dstnodeid="11" dstpinname="Layer 1">
    </LINK>
@@ -549,5 +537,17 @@
    </LINKPOINT>
    <LINKPOINT x="7935" y="7245">
    </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="34" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="7815" top="4335" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7815" top="4335" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Median">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="34" srcpinname="Output Node" dstnodeid="19" dstpinname="Median">
    </LINK>
    </PATCH>

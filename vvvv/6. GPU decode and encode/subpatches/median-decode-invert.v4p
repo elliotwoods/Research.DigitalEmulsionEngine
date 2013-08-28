@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.1.dtd" >
    <PATCH nodename="C:\openFrameworks\Research.ReprojectionScanning\vvvv\6. GPU decode and encode\subpatches\median-decode-invert.v4p" systemname="median-decode-invert" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\5. GPU decode and encode\subpatches\median-decode-invert.v4p">
-   <BOUNDS type="Window" left="15225" top="4770" width="14070" height="12900">
+   <BOUNDS type="Window" left="8010" top="4170" width="14070" height="12900">
    </BOUNDS>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="25" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="4740" top="525" width="0" height="0">

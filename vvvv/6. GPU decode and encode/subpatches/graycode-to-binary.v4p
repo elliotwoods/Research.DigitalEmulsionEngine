@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha29.6.dtd" >
-   <PATCH nodename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\6. GPU decode and encode\subpatches\graycode-to-binary.v4p" systemname="graycode-to-binary" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\5. GPU decode and encode\subpatches\graycode-to-binary.v4p">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.1.dtd" >
+   <PATCH nodename="C:\openFrameworks\Research.ReprojectionScanning\vvvv\6. GPU decode and encode\subpatches\graycode-to-binary.v4p" systemname="graycode-to-binary" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\5. GPU decode and encode\subpatches\graycode-to-binary.v4p">
    <NODE systemname="Graycode (Value)" filename="..\plugins\ValueGraycode\ValueGraycode.csproj" nodename="Graycode (Value)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="900" top="1650" width="100" height="100">
    </BOUNDS>
@@ -73,13 +73,23 @@
    </BOUNDS>
    <BOUNDS type="Node" left="750" top="3360" width="750" height="240">
    </BOUNDS>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="2" srcpinname="Texture Out" dstnodeid="5" dstpinname="Input Node">
-   </LINK>
    <LINK srcnodeid="1" srcpinname="Output" dstnodeid="0" dstpinname="Binary">
    </LINK>
    <LINK srcnodeid="0" srcpinname="Inverse" dstnodeid="3" dstpinname="Data">
    </LINK>
-   <BOUNDS type="Window" left="14625" top="8775" width="3405" height="4665">
+   <BOUNDS type="Window" left="13305" top="6600" width="3405" height="4665">
    </BOUNDS>
+   <NODE systemname="OnOpen (VVVV)" nodename="OnOpen (VVVV)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="2160" top="1650" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Bang" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Bang" dstnodeid="3" dstpinname="Apply">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Texture Out" dstnodeid="5" dstpinname="Input Node">
+   </LINK>
    </PATCH>
