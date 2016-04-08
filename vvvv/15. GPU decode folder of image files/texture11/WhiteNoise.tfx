@@ -1,0 +1,8 @@
+float2 R:TARGETSIZE;
+
+float4 pNoise(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+	float4 c= (float4) 1.0f;
+    return c;
+}
+
+technique10 Noise{pass P1{SetPixelShader(CompileShader(ps_4_0,pNoise()));}}

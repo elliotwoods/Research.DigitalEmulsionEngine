@@ -16,7 +16,6 @@ float pEncode(float4 PosWVP:SV_POSITION,float2 texcoord:TEXCOORD0):SV_TARGET{
 	int y = (R * texcoord).y;
 	
 	int FrameCountX = ceil(log2( (float) PayloadWidth) );
-	
 	int value;
 	int bit;
 	if (FrameIndex < FrameCountX) {

@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.1.dtd" >
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.3.dtd" >
    <PATCH nodename="C:\openFrameworks\Research.ReprojectionScanning\vvvv\12. Canon capture graycode\main.v4p" systemname="4. Generate graycode GPU" filename="C:\dev\openFrameworks\Research.ReprojectionScanning\vvvv\4. Generate graycode GPU.v4p">
-   <BOUNDS type="Window" left="7620" top="4695" width="9000" height="8550">
+   <BOUNDS type="Window" left="7620" top="4695" width="9900" height="8730">
    </BOUNDS>
    <NODE systemname="Graycode (DX11.TextureFX)" filename="texture11\Graycode.tfx" nodename="Graycode (DX11.TextureFX)" componentmode="Hidden" id="1">
    <BOUNDS type="Node" left="885" top="4980" width="4560" height="270">
@@ -167,6 +167,8 @@
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="6" dstpinname="Reset">
    </LINK>
@@ -185,7 +187,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3210" top="5700" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" values="..\..\data\graycode\1280x1024">
+   <PIN pinname="Input String" slicecount="1" values="|..\..\..\..\kimchiandchips\Installations\VVVV.Patches.DaVinci13\12. EDSDK scan image set\captures|">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="render">
    </PIN>
@@ -255,7 +257,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3570" top="2205" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="1024">
+   <PIN pinname="Y Input Value" slicecount="1" values="1080">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -275,7 +277,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2715" top="1890" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="1280">
+   <PIN pinname="Y Input Value" slicecount="1" values="1920">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -407,33 +409,85 @@
    <LINK srcnodeid="34" srcpinname="Output" dstnodeid="6" dstpinname="Maximum">
    </LINK>
    <NODE systemname="ListDevices (EDSDK)" filename="%VVVV%\VVVV.Packs.Image\lib\nodes\plugins\VVVV.Nodes.OpenCV.EDSDK.dll" nodename="ListDevices (EDSDK)" componentmode="Hidden" id="36">
-   <BOUNDS type="Node" left="7770" top="5805" width="100" height="100">
+   <BOUNDS type="Node" left="7770" top="5355" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Device" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="Shoot (EDSDK)" filename="%VVVV%\VVVV.Packs.Image\lib\nodes\plugins\VVVV.Nodes.OpenCV.EDSDK.dll" nodename="Shoot (EDSDK)" componentmode="Hidden" id="37">
-   <BOUNDS type="Node" left="7770" top="6615" width="100" height="100">
+   <BOUNDS type="Node" left="7770" top="7125" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Device" visible="1">
    </PIN>
-   <PIN pinname="Save On Camera" slicecount="1" values="1">
+   <PIN pinname="Save On Camera" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Shoot" visible="1">
+   </PIN>
+   <PIN pinname="Save On Computer" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Save Location" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="36" srcpinname="Device" dstnodeid="37" dstpinname="Device">
    </LINK>
    <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="38">
-   <BOUNDS type="Node" left="8535" top="6255" width="100" height="100">
+   <BOUNDS type="Node" left="8460" top="5715" width="100" height="100">
    </BOUNDS>
    <PIN pinname="OnChange" visible="1">
    </PIN>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="38" srcpinname="OnChange" dstnodeid="37" dstpinname="Shoot">
+   <NODE systemname="FrameDelay (Animation)" nodename="FrameDelay (Animation)" componentmode="Hidden" id="39">
+   <BOUNDS type="Node" left="8475" top="6585" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Info (EDSDK)" filename="%VVVV%\VVVV.Packs.Image\lib\nodes\plugins\VVVV.Nodes.OpenCV.EDSDK.dll" nodename="Info (EDSDK)" componentmode="Hidden" id="40">
+   <BOUNDS type="Node" left="6930" top="7110" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Device" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="36" srcpinname="Device" dstnodeid="40" dstpinname="Device">
    </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="41" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="6915" top="7575" width="2130" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6915" top="7575" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="40" srcpinname="Product Name" dstnodeid="41" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="42">
+   <BOUNDS type="Node" left="8475" top="6225" width="885" height="270">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   </NODE>
    <LINK srcnodeid="6" srcpinname="Output" dstnodeid="38" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="38" srcpinname="OnChange" dstnodeid="42" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="42" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Output" dstnodeid="39" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="39" srcpinname="Output 1" dstnodeid="37" dstpinname="Shoot">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Output String" dstnodeid="37" dstpinname="Save Location">
    </LINK>
    </PATCH>
